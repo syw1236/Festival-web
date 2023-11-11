@@ -1,7 +1,13 @@
-import "./App.css";
-
+import React from "react";
+import CountryDetail from "./components/CountryDetail";
+import FestivalsData from "./data/FestivalsData";
 function App() {
-  return <div className="App">안녕하세요. 10조 입니다.</div>;
+  return (
+    <div>
+      <img src="/image/DaeguBig.jpg" alt="daegu" />
+      <CountryDetail data={FestivalsData} />
+    </div>
+  );
 }
 
 export default App;

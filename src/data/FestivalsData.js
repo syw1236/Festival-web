@@ -1,4 +1,4 @@
-const festivalsData = [
+const FestivalsData = [
   {
     //서울1
     name: "2023 서울정원박람회",
