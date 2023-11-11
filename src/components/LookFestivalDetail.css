@@ -1,0 +1,13 @@
+.lookDetail {
+  border-width: 0 0 1px;
+  background-color: transparent;
+  border-color: rgb(140, 140, 140);
+  color: rgb(140, 140, 140);
+  /* position: relative;
+  left: 127px;
+  top: 120px; */
+  position: absolute;
+  left: 170px;
+  top: 245px;
+  font-size: 16px;
+}
