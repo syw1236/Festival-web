@@ -200,7 +200,7 @@ const festivalsData = [
   },
   {
     //대구 6
-    name: "이월드 인생꽃 사진관 : 황화코스모스",
+    name: "이월드 뮤직페스티벌",
     poster: "../image/DaeguMusic.png",
     image1: "../image/DaeguMusicDetail1.jpg",
     image2: "../image/DaeguMusicDetail2.jpg",
