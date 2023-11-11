@@ -439,3 +439,5 @@ const FestivalsData = [
     pay: "무료",
   },
 ];
+
+export default FestivalsData;
