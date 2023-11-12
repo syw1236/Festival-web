@@ -1,0 +1,31 @@
+.festivalContain {
+  display: inline-block;
+  position: relative;
+  left: 200px;
+  top: 60px;
+  margin-right: 50px;
+  margin-bottom: 50px;
+  padding-bottom: 70px;
+  background-color: white;
+}
+.festivalContain:hover {
+  background-color: rgb(206, 220, 255);
+}
+
+.festivalName {
+  //position: absolute;
+  //left: 55px;
+  //padding-top: 2px;
+  //padding-left: 50px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 17px;
+}
+.festivalLocation {
+  text-align: center;
+  width: 250px;
+  position: absolute;
+  //top: 0px;
+  padding-top: 10px;
+  font-size: 15px;
+}
