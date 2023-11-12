@@ -2,10 +2,10 @@ const FestivalsData = [
   {
     //서울1
     name: "2023 서울정원박람회",
-    poster: "../image/SeoulGardenExpo.jpg",
-    image1: "../image/SeoulGardenDetail1.jpg",
-    image2: "../image/SeoulGardenDetail2.jpg",
-    image3: "../image/SeoulGardenDetail3.jpg",
+    poster: "/image/SeoulGardenExpo.jpg",
+    image1: "/image/SeoulGardenDetail1.jpg",
+    image2: "/image/SeoulGardenDetail2.jpg",
+    image3: "/image/SeoulGardenDetail3.jpg",
     description: "‘정원 도시, 서울’의 감성과 문화를 담은 고품격 정원 축제",
     detail_description:
       "‘정원 도시, 서울’의 감성과 문화를 담은 고품격 정원 축제\n 2023 서울정원박람회는 전문가와 시민의 참여로 다채로운 정원을 조성하고 정원문화 확산을 위한 다양한 프로그램을 통해 ‘정원도시 서울’의 위상을 알리는 정원 축제입니다.\n더 많이, 더 오래 만나는 정원 올해의 서울정원박람회는 나날이 커지는 정원에 대한 시민의 관심에 부응하기 위해 예년보다 정원 규모와 행사기간을 확대해 개최합니다.\n월드컵공원 하늘공원을 복합여가공간으로\n 억새로 유명한 하늘공원에서 개최되는 이번 서울정원박람회는 ‘바람, 풀 그리고 정원’을 주제로 다양한 정원 전시, 정원문화프로그램을 운영합니다. 더불어 ‘서울억새축제’ 및 다양한 공원여가프로그램과도 연계해 시민들에게 수준 높은 휴식·여가 경험을 선사하겠습니다.",
@@ -20,10 +20,10 @@ const FestivalsData = [
   {
     //서울2
     name: "제44회 서울무용제",
-    poster: "../image/SeoulDance.png",
-    image1: "../image/SeoulDanceDetail1.jpg",
-    image2: "../image/SeoulDanceDetail2.jpg",
-    image3: "../image/SeoulDanceDetail3.jpg",
+    poster: "/image/SeoulDance.png",
+    image1: "/image/SeoulDanceDetail1.jpg",
+    image2: "/image/SeoulDanceDetail2.jpg",
+    image3: "/image/SeoulDanceDetail3.jpg",
     description: "새롭게 다가올 시간 그리고 세상을 그리는 춤",
     detail_description:
       "시대는 언제나 이전과 이후로 나뉘는 두 가지 세상을 한 그릇에 담고 있었다. 대전환의 시대. 지금처럼 두 세상 간의 괴리가 컸던 시대가, 지금처럼 다양한 대칭점으로 세상이 나뉘었던 시대가 있었을까? 제44회 서울무용제에서는 암흑기와도 같았던 지난 3년 간의 시간·세상과 의도된 혹은 의도되지 않은 바뀔 수밖에 없었던 대전환과 함께 새롭게 다가올 시간·세상을 춤이라는 예술을 매개로 하나의 그릇에 담아보고자 한다.",
@@ -38,10 +38,10 @@ const FestivalsData = [
   {
     //서울3
     name: "대한민국 우리술 대축제",
-    poster: "../image/SeoulAlcohol.png",
-    image1: "../image/SeoulAlcoholDetail1.jpg",
-    image2: "../image/SeoulAlcoholDetail2.jpg",
-    image3: "../image/SeoulAlcoholDetail3.jpg",
+    poster: "/image/SeoulAlcohol.png",
+    image1: "/image/SeoulAlcoholDetail1.jpg",
+    image2: "/image/SeoulAlcoholDetail2.jpg",
+    image3: "/image/SeoulAlcoholDetail3.jpg",
     description: "국내 최대의 전통주 행사",
     detail_description:
       "대한민국 우리술 대축제는 우리술의 가치와 우수성을 알리는 국내 최대의 전통주 행사이다. 전국의 다양한 우리술을 한 자리에서 만날 수 있으며, 매년 다채로운 소비자 체험 프로그램을 경험해보자.",
@@ -56,10 +56,10 @@ const FestivalsData = [
   {
     //서울4
     name: "관악별빛산책",
-    poster: "../image/SeoulStar.png",
-    image1: "../image/SeoulStarDetail1.jpg",
-    image2: "../image/SeoulStarDetail2.jpg",
-    image3: "../image/SeoulStarDetail3.jpg",
+    poster: "/image/SeoulStar.jpg",
+    image1: "/image/SeoulStarDetail1.jpg",
+    image2: "/image/SeoulStarDetail2.jpg",
+    image3: "/image/SeoulStarDetail3.jpg",
     description: "아름다운 빛으로 물든 신사리 요정 환상의 세계",
     detail_description:
       "관악 신사리에 별빛이 내려오다. 올해 3회째를 맞이하는 관악 별빛 산책에서는 다채로운 빛을 내는 조명들로 더욱 화려하고 풍성하게 돌아왔다. 11월 1일부터 내년 1월 7일까지 개최되는 이번 축제에서는 오색 찬란한 별빛 터널과 별빛 트리, 사슴, 백조, 용 조형물까지 눈길을 사로잡는 빛으로 남녀노소 누구에게나 환상의 시간을 선사한다.",
@@ -74,10 +74,10 @@ const FestivalsData = [
   {
     //서울5
     name: "한국의집 고호재",
-    poster: "../image/SeoulHouse.jpg",
-    image1: "../image/SeoulHouseDetail1.jpg",
-    image2: "../image/SeoulHouseDetail2.jpg",
-    image3: "../image/SeoulHouseDetail3.jpg",
+    poster: "/image/SeoulHouse.jpg",
+    image1: "/image/SeoulHouseDetail1.jpg",
+    image2: "/image/SeoulHouseDetail2.jpg",
+    image3: "/image/SeoulHouseDetail3.jpg",
     description: "한국의집 프리미엄 궁중다과 고호재",
     detail_description:
       "고호재는 한국의집에서 선보이는 프리미엄 궁중다과 브랜드로 '옛 것을 좋아하는 이들의 집'이라는 뜻을 담고 있다. 사계절의 맛과 색을 다과상에 올려내는 고호재는 봄, 여름, 가을, 겨울의 계절별 제철 재료로 만들어낸 정성스러운 다과를 맛볼 수 있는 고품격 체험 프로그램이다. 체험객은 전통 한옥인 한국의집에서 고즈넉한 분위기를 즐기며 1인 다과상과 계절별로 제공되는 단품 메뉴(여름의 빙수, 겨울의 죽 등)를 맛볼 수 있다. 푸르른 녹음이 짙은 한국의집에서의 다과 체험은 전통의 멋과 맛을 즐기는 체험객들에게 색다른 즐거움을 제공한다.",
@@ -92,10 +92,10 @@ const FestivalsData = [
   {
     //서울6
     name: "롯데월드 miracel winter",
-    poster: "../image/SeoulWinter.jpg",
-    image1: "../image/SeoulWinterDetail1.jpg",
-    image2: "../image/SeoulWinterDetail2.jpg",
-    image3: "../image/SeoulWinterDetail3.jpg",
+    poster: "/image/SeoulWinter.jpg",
+    image1: "/image/SeoulWinterDetail1.jpg",
+    image2: "/image/SeoulWinterDetail2.jpg",
+    image3: "/image/SeoulWinterDetail3.jpg",
     description:
       "크리스마스의 기적을 통한 마법 같은 즐거움, 롯데월드 어드벤처 겨울시즌 축제",
     detail_description:
@@ -182,11 +182,11 @@ const FestivalsData = [
   },
   {
     //대구 5
-    name: "이월드 인생꽃 사진관 : 황화코스모스",
-    poster: "../image/DaeguCos.jpg",
-    image1: "../image/DaeguCosDetail1.jpg",
-    image2: "../image/DaeguCosDetail2.jpg",
-    image3: "../image/DaeguCosDetail3.jpg",
+    name: "이월드 인생꽃 사진관",
+    poster: "/image/DaeguCos.jpg",
+    image1: "/image/DaeguCosDetail1.jpg",
+    image2: "/image/DaeguCosDetail2.jpg",
+    image3: "/image/DaeguCosDetail3.jpg",
     description: "도심 속에서 즐기는 가을꽃 나들이, 이월드 인생꽃 사진관",
     detail_description:
       "인생꽃 사진관은 황화 코스모스와 핑크뮬리를 만날 수 있는 이월드 가을축제이다.\n이번 이월드 가을축제 인생꽃 사진관에서는 전년보다 확장된 규모의 <코스모스 가든>을 선보인다. 축제 기간동안 1억만송이 황화코스모스로 가득 채워진 주황빛 물결의 이월드를 만날 수 있다. 또한 주주팜을 장식할 <핑크뮬리힐>도 선보인다. 드넓게 펼쳐진 꽃들 사이에 파묻혀 인생사진을 건져보자.",
