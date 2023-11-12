@@ -1,6 +1,6 @@
-body {
+/* body {
   background-color: rgb(206, 220, 255);
-}
+} */
 .centerContainer {
   width: 1200px;
   margin: 0 auto;
@@ -50,4 +50,29 @@ body {
   position: relative;
   top: 5px;
   left: 2px;
+}
+.region {
+  font-weight: 1000;
+  font-size: 1.3rem;
+}
+.regionDes {
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+.currentpopularity {
+  position: absolute;
+  left: 300px;
+}
+.currentContain {
+  background-color: rgb(244, 245, 247);
+  margin-top: 50px;
+  //width: 1200x;
+}
+.colorDiv {
+  background-color: rgb(206, 220, 255);
+  width: 1300px;
+  padding-left: 200px;
+  padding-right: 200px;
+  position: relative;
+  left: -200px;
 }
