@@ -6,11 +6,6 @@ function RepFestival({ data }) {
   const today = new Date();
   var dateArray = data.date[1].split("-");
   var enddayArray = new Date(dateArray[0], dateArray[1] - 1, dateArray[2]);
-  // const day = enddayArray - today;
-  // //const day = data.date[1].toString() - today;
-  // //console.log(dateArray[0], dateArray[1], dateArray[2]);
-  // console.log(dateArray);
-  // const daysRemaining = Math.ceil(day / (1000 * 60 * 60 * 24));
 
   const timeDiff = enddayArray.getTime() - today.getTime();
   const daysLeft = Math.ceil(timeDiff / (1000 * 60 * 60 * 24));
