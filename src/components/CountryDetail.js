@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import RepFestival from "./RepFestivalList";
+import RepFestivalList from "./RepFestivalList";
+import FestivalSimple from "./FistivalSimple";
 import "./CountryDetail.css";
 const Countrys = [
   {
@@ -76,43 +77,76 @@ const Countrys = [
 function CountryDetail({ data }) {
   const [activeIndex, setActiveIndex] = useState(0);
 
+  const filterlocationArray = data.filter(
+    (item) => item.location === Countrys[activeIndex].region
+  );
+
+  //const array = Array(3);
   const handleCountryClick = (index) => {
     setActiveIndex(index);
   };
 
+  const dividedArrays = [];
+  for (let i = 0; i < filterlocationArray.length; i += 3) {
+    dividedArrays.push(filterlocationArray.slice(i, i + 3));
+  }
+
+  // console.log(diviedArrays[0]);
+
   return (
     <div className="centerContainer">
-      <ul className="countryul">
-        {Countrys.map((country, i) => (
-          <li
-            className={`countryli ${activeIndex === i ? "active" : ""}`}
-            key={i}
-            onClick={() => handleCountryClick(i)}
-          >
-            {country.region}
-          </li>
-        ))}
-      </ul>
-      <div className="clickCountry">
-        <img
-          src={activeIndex == null ? "" : Countrys[activeIndex].image}
-          width={20}
-          height={20}
-          alt={activeIndex == null ? "" : Countrys[activeIndex].region}
-          className="countryImage"
-        />
-        <p className="clickCountryName">
-          {activeIndex !== null && Countrys[activeIndex].region}
-        </p>
-        <img
-          className="arrow"
-          src="/image/arrow.png"
-          width={30}
-          height={30}
-          alt="arrow.png"
+      <div className="colorDiv">
+        <ul className="countryul">
+          {Countrys.map((country, i) => (
+            <li
+              className={`countryli ${activeIndex === i ? "active" : ""}`}
+              key={i}
+              onClick={() => handleCountryClick(i)}
+            >
+              {country.region}
+            </li>
+          ))}
+        </ul>
+
+        <div className="clickCountry">
+          <img
+            src={activeIndex == null ? "" : Countrys[activeIndex].image}
+            width={20}
+            height={20}
+            alt={activeIndex == null ? "" : Countrys[activeIndex].region}
+            className="countryImage"
+          />
+          <p className="clickCountryName">
+            {activeIndex !== null && Countrys[activeIndex].region}
+          </p>
+          <img
+            className="arrow"
+            src="/image/arrow.png"
+            width={30}
+            height={30}
+            alt="arrow.png"
+          />
+        </div>
+        <RepFestivalList
+          data={filterlocationArray}
+          country={Countrys[activeIndex].region}
         />
       </div>
-      <RepFestival data={data} country={Countrys[activeIndex].region} />
+
+      <div className="currentContain">
+        <p className="currentpopularity">
+          <span className="region">{Countrys[activeIndex].region} </span>
+          <span className="regionDes">현재 인기 축제</span>
+        </p>
+        {dividedArrays.map((row, rowIndex) => (
+          <div key={rowIndex} className="festivalSimpleContain">
+            {row.map((item, itemIndex) => (
+              //<span>{item.name}</span>
+              <FestivalSimple key={itemIndex} festival={item} />
+            ))}
+          </div>
+        ))}
+      </div>
     </div>
   );
 }
