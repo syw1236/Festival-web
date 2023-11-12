@@ -3,10 +3,8 @@ import RepFestival from "./RepFestival";
 function RepFestivalList({ data = [], country }) {
   const today = new Date();
   console.log(`today => ${today}`);
-  const filterlocationArray = data.filter((item) => item.location === country);
-  const filterDateArray = filterlocationArray.filter(
-    (item) => new Date(item.date[1]) > today
-  );
+  //const filterlocationArray = data.filter((item) => item.location === country);
+  const filterDateArray = data.filter((item) => new Date(item.date[1]) > today);
   // console.log(`dataArray = ${dataArray2.length}`);
   const randomNum = () => {
     let indexs = [];
