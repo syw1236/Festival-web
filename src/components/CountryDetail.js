@@ -5,71 +5,71 @@ import "./CountryDetail.css";
 const Countrys = [
   {
     region: "서울",
-    image: "/image/seoulLogo.png",
+    image: "/image/logo/seoulLogo.png",
   },
   {
     region: "부산",
-    image: "/image/busanLogo.png",
+    image: "/image/logo/busanLogo.png",
   },
   {
     region: "대구",
-    image: "/image/daeguLogo.png",
+    image: "/image/logo/daeguLogo.png",
   },
   {
     region: "인천",
-    image: "/image/incheonLogo.png",
+    image: "/image/logo/incheonLogo.png",
   },
   {
     region: "광주",
-    image: "/image/gwangjuLogo.png",
+    image: "/image/logo/gwangjuLogo.png",
   },
   {
     region: "대전",
-    image: "/image/daejeonLogo.png",
+    image: "/image/logo/daejeonLogo.png",
   },
   {
     region: "울산",
-    image: "/image/ulsanLogo.png",
+    image: "/image/logo/ulsanLogo.png",
   },
   {
     region: "세종",
-    image: "/image/sejongLogo.png",
+    image: "/image/logo/sejongLogo.png",
   },
   {
     region: "경기",
-    image: "/image/gyeonggiLogo.png",
+    image: "/image/logo/gyeonggiLogo.png",
   },
   {
     region: "강원",
-    image: "/image/gangwonLogo.png",
+    image: "/image/logo/gangwonLogo.png",
   },
   {
     region: "충북",
-    image: "/image/chungbukLogo.png",
+    image: "/image/logo/chungbukLogo.png",
   },
   {
     region: "충남",
-    image: "/image/chungnamLogo.png",
+    image: "/image/logo/chungnamLogo.png",
   },
   {
     region: "전북",
-    image: "/image/jeonbukLogo.png",
+    image: "/image/logo/jeonbukLogo.png",
   },
   {
     region: "전남",
-    image: "/image/jeonnamLogo.jpg",
+    image: "/image/logo/jeonnamLogo.jpg",
   },
   {
     region: "경북",
-    image: "/image/gyeongbukLogo.png",
+    image: "/image/logo/gyeongbukLogo.png",
   },
   {
     region: "경남",
-    image: "/image/gyeongnamLogo.png",
+    image: "/image/logo/gyeongnamLogo.png",
   },
   {
     region: "제주",
-    image: "/image/jejuLogo.png",
+    image: "/image/logo/jejuLogo.png",
   },
 
   // "제주",
@@ -121,7 +121,7 @@ function CountryDetail({ data }) {
           </p>
           <img
             className="arrow"
-            src="/image/arrow.png"
+            src="/image/icon/arrow.png"
             width={30}
             height={30}
             alt="arrow.png"
