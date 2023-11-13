@@ -1,19 +1,8 @@
-// App.js
-import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import SearchList from './components/SearchList';
-import FestivalDetail from './components/FestivalDetail';
-
-const App = () => {
-  return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<SearchList />} />
-        <Route path="/festival_detail/:id" element={<FestivalDetail />} />
-      </Routes>
-    </Router>
-  );
-};
+import React from "react";
+//import FestivalsData from "./data/FestivalsData";
+function App() {
+  return <div>안녕하세요 ㅎ</div>;
+}
 
 export default App;
 
