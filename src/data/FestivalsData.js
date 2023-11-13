@@ -462,5 +462,3 @@ const festivalsData = [
     pay: "무료",
   },
 ];
-
-export default festivalsData;
