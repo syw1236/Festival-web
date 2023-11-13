@@ -1,10 +1,10 @@
 import React from "react";
 import CountryDetail from "./components/CountryDetail";
-import FestivalsData from "./data/FestivalsData";
+import festivalsData from "./data/festivalsData";
 function App() {
   return (
     <div>
-      <CountryDetail data={FestivalsData} />
+      <CountryDetail data={festivalsData} />
     </div>
   );
 }
