@@ -1,7 +1,7 @@
-import "./App.css";
-
+import React from "react";
+//import FestivalsData from "./data/FestivalsData";
 function App() {
-  return <div className="App">안녕하세요. 10조 입니다.</div>;
+  return <div>안녕하세요 ㅎ</div>;
 }
 
 export default App;
