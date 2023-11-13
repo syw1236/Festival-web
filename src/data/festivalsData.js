@@ -1,4 +1,5 @@
 
+
 // data/festivalsData.js
 
 const festivalsData = [
@@ -423,6 +424,11 @@ const festivalsData = [
             "time": "0:00 ~ 24:00",
             "pay": "무료"
           },
+
+// src/data/FestivalsData.js
+
+
+
   // 제주도==============================================
   {
     id: 301,
