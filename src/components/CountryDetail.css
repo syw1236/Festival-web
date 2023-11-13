@@ -61,18 +61,33 @@
 }
 .currentpopularity {
   position: absolute;
-  left: 300px;
+  left: 410px;
 }
 .currentContain {
   background-color: rgb(244, 245, 247);
   margin-top: 50px;
+  padding-bottom: 40px;
   //width: 1200x;
 }
 .colorDiv {
   background-color: rgb(206, 220, 255);
   width: 1300px;
-  padding-left: 200px;
-  padding-right: 200px;
+  padding-left: 300px;
+  padding-right: 500px;
+  padding-top: 60px;
   position: relative;
-  left: -200px;
+  left: -350px;
+}
+.festivalschedule {
+  position: absolute;
+  left: 400px;
+  top: 1450px;
+}
+.schedulDes {
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+.minusD-dayContain {
+  positiona: relative;
+  left: 500px;
 }
