@@ -1,6 +1,6 @@
 import React from "react";
 import CountryDetail from "./components/CountryDetail";
-import FestivalsData from "./data/FestivalsData";
+import FestivalsData from "./data/festivalsData";
 function App() {
   return (
     <div>
