@@ -1,6 +1,6 @@
-// src/data/festivalsData.js
+// src/data/FestivalsData.js
 
-const festivalsData = [
+const FestivalsData = [
   // 제주도==============================================
   {
     id: 301,
@@ -1482,3 +1482,5 @@ const festivalsData = [
     pay: "무료",
   },
 ];
+
+export default FestivalsData;
