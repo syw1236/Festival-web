@@ -5,30 +5,24 @@ function RepFestivalList({ data = [], country }) {
   console.log(`today => ${today}`);
   //const filterlocationArray = data.filter((item) => item.location === country);
   const filterDateArray = data.filter((item) => new Date(item.date[1]) > today);
-  // console.log(`dataArray = ${dataArray2.length}`);
-  const randomNum = () => {
-    let indexs = [];
-    var num = null;
-    for (let i = 0; i < 3; i++) {
-      var random = Math.floor(Math.random() * filterDateArray.length);
-      if (num !== random) {
-        indexs.push(filterDateArray[random]);
+  const getRandomIndexes = (max, count) => {
+    const indexes = [];
+    while (indexes.length < count) {
+      const randomIndex = Math.floor(Math.random() * max);
+      if (!indexes.includes(randomIndex)) {
+        indexes.push(randomIndex);
       }
-      // } else {
-      //   indexs.pop();
-      //   i = -1;
-      // }
-      num = random;
     }
-    return indexs;
+    return indexes;
   };
+  const randomIndexes = getRandomIndexes(filterDateArray.length, 3);
 
   return (
     <table>
       <tr>
-        {randomNum().map((random, i) => (
-          <td>
-            <RepFestival key={i} data={random} />
+        {randomIndexes.map((index) => (
+          <td key={index}>
+            <RepFestival data={filterDateArray[index]} />
           </td>
         ))}
       </tr>
