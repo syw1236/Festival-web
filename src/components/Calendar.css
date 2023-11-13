@@ -1,0 +1,69 @@
+.calendarContainer {
+  display: inline-block;
+  padding-right: 10px;
+  position: relative;
+  top: 200px;
+  left: 100px;
+  padding-left: 10px;
+  border-top: 1px solid #444444;
+  border-bottom: 1px solid #444444;
+}
+.Year-Moth-dayContainer {
+  display: inline-block;
+  position: absolute;
+  left: 680px;
+  top: 1530px;
+}
+.period {
+  width: 500px;
+  font-weight: bold;
+  font-size: 2rem;
+  margin-left: 50px;
+  margin-right: 50px;
+}
+.nextBtn {
+  border-width: 0;
+  background-color: white;
+  font-weight: bold;
+  font-size: 2rem;
+  position: relative;
+}
+
+.dayli {
+  border-radius: 30px;
+  padding-left: 13px;
+  padding-right: 13px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  /* position: relative;
+  right: 12px; */
+  text-align: center;
+}
+/* .dayli:hover {
+  cursor: pointer;
+} */
+.dayli.active {
+  background-color: rgb(140, 140, 140);
+}
+.dayofweekli {
+  position: relative;
+  left: 1px;
+}
+.calendarul {
+  border-radius: 30px;
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-top: 10px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.calendarul:hover {
+  background-color: black;
+  color: white;
+  cursor: pointer;
+}
+.calendarul.active {
+  background-color: black;
+  color: white;
+}
