@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import RepFestivalList from "./RepFestivalList";
 import FestivalSimple from "./FistivalSimple";
+import Calendar from "./Calendar";
 import "./CountryDetail.css";
 const Countrys = [
   {
@@ -146,6 +147,13 @@ function CountryDetail({ data }) {
             ))}
           </div>
         ))}
+      </div>
+      <div>
+        <p className="festivalschedule">
+          <span className="region">{Countrys[activeIndex].region} </span>
+          <span className="schedulDes">축제 일정</span>
+        </p>
+        <Calendar festivals={filterlocationArray} />
       </div>
     </div>
   );
