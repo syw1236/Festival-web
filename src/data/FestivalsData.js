@@ -463,4 +463,4 @@ const festivalsData = [
   },
 ];
 
-export default FestivalsData;
+export default festivalsData;
