@@ -1,4 +1,4 @@
-const FestivalsData = [
+const festivalsData = [
   {
     //서울1
     id: 1,
@@ -462,4 +462,4 @@ const FestivalsData = [
     pay: "무료",
   },
 ];
-export default FestivalsData;
+export default festivalsData;
