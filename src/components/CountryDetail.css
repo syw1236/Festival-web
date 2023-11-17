@@ -9,11 +9,14 @@
   text-align: center;
 }
 .countryli {
+  position: relative;
+  left: 37px;
   display: inline-block;
   padding-left: 12px;
   padding-right: 12px;
   padding-top: 10px;
   padding-bottom: 10px;
+  font-weight: bold;
 }
 
 .countryli:hover {
@@ -30,8 +33,8 @@
 }
 .clickCountry {
   position: relative;
-  left: 147px;
-  top: -15px;
+  left: 75px;
+  top: -20px;
   font-size: 1.5rem;
   font-weight: bold;
 }
@@ -53,39 +56,46 @@
 }
 .region {
   font-weight: 1000;
-  font-size: 1.3rem;
+  font-size: 1.5rem;
 }
 .regionDes {
   font-weight: 600;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
 }
 .currentpopularity {
   position: absolute;
   left: 410px;
+  background-color: rgb(206, 220, 255);
+
+  padding: 5px;
 }
 .currentContain {
   background-color: rgb(244, 245, 247);
   margin-top: 50px;
-  padding-bottom: 40px;
+  padding-bottom: 60px;
   //width: 1200x;
 }
 .colorDiv {
   background-color: rgb(206, 220, 255);
-  width: 1300px;
-  padding-left: 300px;
+  width: 1000px;
+  padding-left: 398px;
+  //padding-left: 500px;
   padding-right: 500px;
   padding-top: 60px;
   position: relative;
-  left: -350px;
+  left: -349px;
 }
 .festivalschedule {
   position: absolute;
   left: 400px;
-  top: 1450px;
+  top: 1467px;
+  background-color: rgb(206, 220, 255);
+
+  padding: 5px;
 }
 .schedulDes {
-  font-weight: bold;
-  font-size: 1.1rem;
+  font-weight: 600;
+  font-size: 1.2rem;
 }
 .minusD-dayContain {
   positiona: relative;
