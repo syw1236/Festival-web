@@ -1,13 +1,59 @@
-import React, { useState, useEffect } from "react";
-import CalendarSlider from "./SimpleSlider";
+import React, { useState, useEffect, useRef } from "react";
+//import CalendarSlider from "./CalendarSlider";
+import CalendarSwiper from "./CalendarSwiper";
 import "./Calendar.css";
+
 const Calendar = ({ festivals }) => {
+  //const [festivalArray, setFestivalArray] = useState(festivals);
   const [date, setDate] = useState(new Date());
   const [week, setWeek] = useState([]);
   const [activeIndex, setActiveIndex] = useState(0);
+  // const [festivalArray, setFestivalArray] = useState([]);
+  const [isNextBtnClicked, setIsNextBtnClicked] = useState(false);
+  //const [filteringArray, setFilteringArray] = useState([]); // state로 변경
+  const filteredFestivalArrayRef = useRef([]); // useRef로 변수 선언
+  //setFestivalArray(festivals);
   const handleCountryClick = (index) => {
     setActiveIndex(index);
+    setIsNextBtnClicked(false);
+    //filteredFestivalArrayRef.current = filtering();
+    const filteredFestival = festivals.filter((festival) => {
+      const festivalStartDate = new Date(festival.date[0]);
+      const festivalEndDate = new Date(festival.date[1]);
+      const clickedDate = new Date(week[index][1]);
+
+      // 시간을 무시하고 년, 월, 일만을 비교
+      festivalStartDate.setHours(0, 0, 0, 0);
+      festivalEndDate.setHours(0, 0, 0, 0);
+      clickedDate.setHours(0, 0, 0, 0);
+
+      console.log(
+        `new Date(festival.date[0]) => ${new Date(festival.date[0])}`
+      );
+      console.log(
+        `new Date(festival.date[1]) => ${new Date(festival.date[1])}`
+      );
+      console.log(`week[index][1] => ${week[index][1]}`);
+      console.log(`festival name => ${festival.name}`);
+
+      return (
+        week[index][1] &&
+        festivalStartDate <= clickedDate &&
+        clickedDate <= festivalEndDate
+      );
+    });
+
+    if (filteredFestival.length < 3) {
+      while (true) {
+        if (filteredFestival.length === 3) break;
+        console.log("inputing image...");
+        filteredFestival.push({ poster: "/image/icon/noimage.png" });
+      }
+    }
+
+    filteredFestivalArrayRef.current = filteredFestival;
   };
+
   useEffect(() => {
     let now = new Date();
     let currentDate = new Date(
@@ -16,16 +62,50 @@ const Calendar = ({ festivals }) => {
       now.getDate()
     );
     let currentWeek = makeWeekArr(currentDate);
-    setWeek(currentWeek); //오늘을 기준으로 일주일치 날짜 들어있는 배열
-    setDate(currentDate);
+
     const currentDayIndex = currentWeek.findIndex(
       ([index, day]) =>
         day.getFullYear() === currentDate.getFullYear() &&
         day.getMonth() === currentDate.getMonth() &&
         day.getDate() === currentDate.getDate()
     );
+
+    // if (activeIndex !== -1 && activeIndex !== currentDayIndex) return;
+
+    setWeek(currentWeek);
+    setDate(currentDate);
     setActiveIndex(currentDayIndex);
-  }, []);
+
+    const filteredFestival = festivals.filter((festival) => {
+      const festivalStartDate = new Date(festival.date[0]);
+      const festivalEndDate = new Date(festival.date[1]);
+      const clickedDate = new Date(currentWeek[currentDayIndex][1]);
+
+      // 시간을 무시하고 년, 월, 일만을 비교
+      festivalStartDate.setHours(0, 0, 0, 0);
+      festivalEndDate.setHours(0, 0, 0, 0);
+      clickedDate.setHours(0, 0, 0, 0);
+
+      return (
+        currentWeek[currentDayIndex][1] &&
+        festivalStartDate <= clickedDate &&
+        clickedDate <= festivalEndDate
+      );
+    });
+    if (filteredFestival.length < 3) {
+      console.log("filteredFfestival.length is 부족");
+      while (true) {
+        if (filteredFestival.length === 3) break;
+        console.log("inputing image...");
+        filteredFestival.push({ poster: "/image/icon/noimage.png" });
+      }
+    }
+
+    filteredFestivalArrayRef.current = filteredFestival;
+
+    console.log("useEffect");
+    console.log(`useEffect in currentDayIndex => ${currentDayIndex}`);
+  }, [festivals]);
 
   const makeWeekArr = (date) => {
     let day = date.getDay();
@@ -38,26 +118,36 @@ const Calendar = ({ festivals }) => {
   };
 
   const onPressArrowLeft = () => {
-    //왼쪽 버튼 누를 시에
     let newDate = new Date(date.valueOf() - 86400000 * 14);
     let newWeek = makeWeekArr(newDate);
     setWeek(newWeek);
     setDate(newDate);
+    for (let i; i < newWeek.length; i++) {
+      if (newWeek[i] === newDate) {
+        setActiveIndex(i);
+      }
+    }
+    setIsNextBtnClicked(true);
+    console.log("onPressArrowLeft");
   };
 
   const onPressArrowRight = () => {
-    //오른쪽 버튼 누를시에
     let newDate = new Date(date.valueOf() + 86400000 * 14);
     let newWeek = makeWeekArr(newDate);
     setWeek(newWeek);
     setDate(newDate);
+    for (let i; i < newWeek.length; i++) {
+      if (newWeek[i] === newDate) {
+        setActiveIndex(i);
+      }
+    }
+    setIsNextBtnClicked(true);
+    console.log("onPressArrowRight");
   };
-
-  // 나머지 컴포넌트 로직 및 JSX 부분을 추가하십시오.
 
   return (
     <div className="tatalCalendarContainer">
-      <div className="Year-Moth-dayContainer">
+      <div className="Year-Month-dayContainer">
         <button className="nextBtn" onClick={onPressArrowLeft}>
           {"<"}
         </button>
@@ -78,12 +168,13 @@ const Calendar = ({ festivals }) => {
         </button>
       </div>
       {week.map(([index, day]) => (
-        <div className="calendarContainer">
+        <div className="calendarContainer" key={index}>
           <ul
-            className={`calendarul ${activeIndex === index ? "active" : ""}`}
-            onClick={() => handleCountryClick(index)}
+            className={`calendarul ${activeIndex === index ? "active" : ""} ${
+              isNextBtnClicked ? "nextBtnClicked" : ""
+            }`}
+            onClick={() => handleCountryClick(index)} // 수정된 부분
           >
-            {/* <li key={index} className="dayofweekli"> */}
             <li
               className={`dayofweekli ${day.getDay() === 6 ? "saturday" : ""} ${
                 day.getDay() === 0 ? "sunday" : ""
@@ -101,13 +192,15 @@ const Calendar = ({ festivals }) => {
                 .format(day)
                 .slice(0, 1)}
             </li>
-            <li key={index} className={"dayli"}>
+            <li className={"dayli"}>
               {day.getDate().toString().padStart(2, "0")}
             </li>
           </ul>
         </div>
       ))}
-      <CalendarSlider festivals={festivals} />
+      {/* <CalendarSlider festivals={festivals} week={week} index={activeIndex} /> */}
+      {/* <CalendarSlider festivals={festivalArray} /> */}
+      <CalendarSwiper festivals={filteredFestivalArrayRef.current} />
     </div>
   );
 };
