@@ -23,7 +23,7 @@ function RepFestival({ data }) {
           <span className="description">{data.description}</span>
         </li>
         <li>
-          <LookFestivalDetail />
+          <LookFestivalDetail festival={data} />
         </li>
       </ul>
     </div>
