@@ -2,21 +2,20 @@
   display: inline-block;
   position: relative;
   left: 200px;
-  top: 60px;
+  top: 85px;
   margin-right: 50px;
   margin-bottom: 50px;
   padding-bottom: 70px;
   background-color: white;
+  //border: 2px solid lightgray;
+  border: 1px solid gray;
 }
 .festivalContain:hover {
   background-color: rgb(206, 220, 255);
+  box-shadow: 5px 5px 5px 5px gray;
 }
 
 .festivalName {
-  //position: absolute;
-  //left: 55px;
-  //padding-top: 2px;
-  //padding-left: 50px;
   text-align: center;
   font-weight: bold;
   font-size: 17px;
