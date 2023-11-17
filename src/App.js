@@ -49,6 +49,7 @@ function App() {
   // (양이 많은 더미데이터를 props로 복사해 전달하는 것보다 현재 위치에서 검색함수를 만들고 함수를 props로 전달하는 것이 효율적인 것 같습니다. )
   const searchData = (token) => fullData.filter((item) => item.name.toLowerCase().includes(token));
 
+  
   return <Main todayFestivals={todayFestivals} likedFestivals={likedFestivals} searchData={searchData} />;
 }
 
