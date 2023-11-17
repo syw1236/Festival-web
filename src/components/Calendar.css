@@ -2,17 +2,17 @@
   display: inline-block;
   padding-right: 10px;
   position: relative;
-  top: 200px;
+  top: 150px;
   left: 100px;
   padding-left: 10px;
   border-top: 1px solid #444444;
   border-bottom: 1px solid #444444;
 }
-.Year-Moth-dayContainer {
+.Year-Month-dayContainer {
   display: inline-block;
   position: absolute;
   left: 680px;
-  top: 1530px;
+  top: 1500px;
 }
 .period {
   width: 500px;
@@ -27,6 +27,7 @@
   font-weight: bold;
   font-size: 2rem;
   position: relative;
+  cursor: pointer;
 }
 
 .dayli {
@@ -66,4 +67,8 @@
 .calendarul.active {
   background-color: black;
   color: white;
+}
+.calendarul.nextBtnClicked {
+  background-color: white;
+  color: black; /* 텍스트 색상을 조절할 수도 있습니다. */
 }
