@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import RepFestivalList from "./RepFestivalList";
 import FestivalSimple from "./FistivalSimple";
 import Calendar from "./Calendar";
@@ -76,11 +76,8 @@ const Countrys = [
   // "제주",
 ];
 function CountryDetail({ data }) {
-  const [activeIndex, setActiveIndex] = useState(0);
-
-  const filterlocationArray = data.filter(
-    (item) => item.location === Countrys[activeIndex].region
-  );
+  const [activeIndex, setActiveIndex] = useState(0); //선택한 지역에 대한 인덱스 state
+  const [festivalArray, setFestivalArray] = useState(data); //축제 데이터에 대한 state
 
   //const array = Array(3);
   const handleCountryClick = (index) => {
@@ -88,11 +85,16 @@ function CountryDetail({ data }) {
   };
 
   const dividedArrays = [];
-  for (let i = 0; i < filterlocationArray.length; i += 3) {
-    dividedArrays.push(filterlocationArray.slice(i, i + 3));
+  for (let i = 0; i < festivalArray.length; i += 3) {
+    dividedArrays.push(festivalArray.slice(i, i + 3));
   }
 
-  // console.log(diviedArrays[0]);
+  useEffect(() => {
+    const filterlocationArray = data.filter(
+      (item) => item.location === Countrys[activeIndex].region
+    );
+    setFestivalArray(filterlocationArray);
+  }, [activeIndex, data]);
 
   return (
     <div className="centerContainer">
@@ -129,7 +131,7 @@ function CountryDetail({ data }) {
           />
         </div>
         <RepFestivalList
-          data={filterlocationArray}
+          data={festivalArray}
           country={Countrys[activeIndex].region}
         />
       </div>
@@ -153,7 +155,7 @@ function CountryDetail({ data }) {
           <span className="region">{Countrys[activeIndex].region} </span>
           <span className="schedulDes">축제 일정</span>
         </p>
-        <Calendar festivals={filterlocationArray} />
+        <Calendar festivals={festivalArray} />
       </div>
     </div>
   );
