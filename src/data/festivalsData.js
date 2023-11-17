@@ -1,6 +1,7 @@
 // src/data/festivalsData.js
 
-const festivalsData = [
+
+export const festivalsData = [
     // 제주도==============================================
     {
         id: 301,
@@ -17,7 +18,7 @@ const festivalsData = [
         detail_location: "제주특별자치도 서귀포시 남원읍 신례동로 256",
         tel: "064-732-2114",
         time: "9:00 ~ 18:00(입장마감 16:30)",
-        pay: "유료",
+        pay: "유료"
     },
     {
         id: 302,

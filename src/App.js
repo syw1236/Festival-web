@@ -1,7 +1,16 @@
-import "./App.css";
+import React from 'react';
+import FestivalDetail from './components/FestivalDetail';
 
-function App() {
-  return <div className="App">안녕하세요. 10조 입니다.</div>;
+
+
+const App = () => {
+
+
+    return (
+      <div>
+          <FestivalDetail />
+      </div>
+    );
 }
 
 export default App;
