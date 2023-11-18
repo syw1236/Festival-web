@@ -1562,7 +1562,7 @@ const festivalsData = [
     poster: "/image/daejeon/daejeon_jazz_poster.jpg",
     image1: "/image/daejeon/daejeon_jazz1.jpg",
     image2: "/image/daejeon/daejeon_jazz2.jpg",
-    image3: "",
+    image3: "/image/daejeon/daejeon_jazz3.jpg",
     description: "대전에서 열리는 다양한 장르의 재즈공연!",
     detail_description: "2023년 9월 8일과 9일에 엑스포과학공원 물빛광장에서 진행되는 대전 재즈 페스티벌입니다.",
     likes: 173,
@@ -1599,7 +1599,7 @@ const festivalsData = [
     poster: "/image/daejeon/daejeon_art_poster.png",
     image1: "/image/daejeon/daejeon_art1.jpg",
     image2: "/image/daejeon/daejeon_art2.jpg",
-    image3: "",
+    image3: "/image/daejeon/daejeon_art3.jpg",
     description: "예술로 하나되는 시간과 공간!",
     detail_description:
       "법동전통시장 일대에서 열리는 이번 축제는 마당극을 시작으로 우쿨렐레 연주, 합창단 공연, 태권무 공연 등 지역예술인과 동호인들이 함께 하는 주민참여형 프로그램들로 구성됐다.",
@@ -1676,7 +1676,7 @@ const festivalsData = [
     poster: "/image/ulsan/ulsan_meat_poster.png",
     image1: "/image/ulsan/ulsan_meat1.jpg",
     image2: "/image/ulsan/ulsan_meat2.jpg",
-    image3: "",
+    image3: "/image/ulsan/ulsan_meat3.jpg",
     description: "전국, 봉계의 맛에 반하다",
     detail_description:
       "축제 기간에는 암소 한우를 시중금액보다 저렴하게 구매할 수 있는 판매장을 운영하며, 울주군 청년창업농 제품 홍보, 한우버거 만들기, 친환경 봉계놀이터, 한우가면 만들기 등 여러 가지 부대행사도 진행된다.",
@@ -1789,9 +1789,9 @@ const festivalsData = [
     id: 519,
     name: "급이 있는 영화제",
     poster: "/image/sejong/sejong_movie_poster.png",
-    image1: "",
-    image2: "",
-    image3: "",
+    image1: "/image/sejong/sejong_movie1.jpg",
+    image2: "/image/sejong/sejong_movie2.jpg",
+    image3: "/image/sejong/sejong_movie3.jpg",
     description: "등급과 함께하는 영화이야기!",
     detail_description:
       "2023년 <급이 있는 영화제>가 세종시를 찾아간다. <급이 있는 영화제>는 영화를 감상하고 등급분류 퀴즈 및 모의 등급분류 체험을 하는 관객 참여형으로 이뤄진다. 특히, 이번 영화제는 지역 관객층과 더욱 적극적으로 소통하기 위해 올해 처음으로 세종특별자치시 시민과 학생들을 대상으로 진행된다.",
@@ -1848,7 +1848,7 @@ const festivalsData = [
     poster: "/image/sejong/sejong_child_poster.png",
     image1: "/image/sejong/sejong_chlid1.jpg",
     image2: "/image/sejong/sejong_chlid2.jpg",
-    image3: "",
+    image3: "/image/sejong/sejong_chlid3.jpg",
     description: "청소년들의 끼와 열정을 펼치는 청소년 문화예술 축제!",
     detail_description:
       "금강청소년축제는 청소년들의 끼와 열정을 펼치는 축제로서 매년 금강을 중심으로 개최됩니다. 청소년 공연예술 경연대회, 체험마켓, 플로킹, 토크콘서트, 축하공연 등 청소년을 위한 다채로운 프로그램으로 행사가 진행된다. 에너지 넘치는 청소년문화축제 현장으로 청소년 여러분의 많은 관심과 참여바랍니다.",
