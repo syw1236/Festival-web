@@ -54,12 +54,11 @@ function FamousFestivalListItem({ data }) {
     console.log("축제상세페이지로 이동");
     //navigate("/축제상세페이지", { state: { festivalData: data } });
   };
-
   return (
     <ListItem onClick={clikPoster}>
       <Poster src={data.poster} />
       <LikePrint onClick={handleLike}>
-        <FaHeart size={25} color={"#fa5793"} />
+        <FaHeart size={25} color={liked ? "#fa5793" : "grey"} />
         <LikeCount>{likes}</LikeCount>
       </LikePrint>
     </ListItem>

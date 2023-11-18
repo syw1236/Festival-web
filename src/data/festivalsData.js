@@ -1484,8 +1484,8 @@ const festivalsData = [
     name: "서면 빛 축제",
     poster: "/image/busan/busan_light_poster.jpg",
     image1: "/image/busan/busan_light1.jpg",
-    image2: "",
-    image3: "",
+    image2: "/image/busan/busan_light2.jpg",
+    image3: "/image/busan/busan_light3.jpg",
     description: "빛을 통해 세상을 만나고 빛을 통해 하늘을 본다.",
     detail_description:
       "올해로 네 번째 개최되는 부산진구 빛축제는 21년과 22년에 개최되었던 부산시민공원에서 서면으로 장소를 옮겨 진행된다. 10월 13일 오후 7시30분 점등을 알리는 퍼포먼스를 시작으로 ‘빛과 걷다(Walk with Light)’라는 테마로 서면 일대를 화려하게 밝힐 예정이다.",
