@@ -2,10 +2,14 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { FaHeart } from 'react-icons/fa';
 import festivalsData from '../data/festivalsData';
+import Tab from './Tab';
+import '../css/SearchList.css';
+import TabPrint from './TabPrint';
 
 const SearchList = () => {
   const [festivals, setFestivals] = useState(festivalsData);
   const [userInput, setUserInput] = useState('');
+  const [selectedArea, setSelectedArea] = useState('');
 
   const getValue = (e) => {
     setUserInput(e.target.value.toLowerCase());
@@ -24,6 +28,21 @@ const SearchList = () => {
         return festival;
       })
     );
+  };
+
+  const handleAreaChange = (e) => {
+    setSelectedArea(e.target.value);
+    if (e.target.value !== '') {
+      // If an area is selected, filter festivals based on the selected area (case-insensitive)
+      setFestivals(
+        festivalsData.filter((festival) =>
+          festival.location.toLowerCase().includes(e.target.value.toLowerCase())
+        )
+      );
+    } else {
+      // If no area is selected, show all festivals
+      setFestivals(festivalsData);
+    }
   };
 
   const searched = festivals.filter((item) =>
@@ -47,15 +66,44 @@ const SearchList = () => {
   }
 
   return (
-    <>
-      <h1 style={{ textAlign: 'center' }}>Festival List</h1>
+    <div className='searchListContainer'>
+      <h1 className='searchListTitle' style={{ textAlign: 'center' }}>Festival List</h1>
       <div style={{ textAlign: 'center', marginBottom: '20px' }}>
-        <input onChange={getValue} style={{ width: '300px', height:'50px' }}placeholder='궁금한 축제를 입력하세요' />
+        <input onChange={getValue} className="search-box" style={{ width: '300px', height:'50px' }} placeholder='궁금한 축제를 입력하세요' />
       </div>
-      {searched.map((item) => (
-        <Card key={item.id} {...item} />
-      ))}
-    </>
+      <div className="select-container">
+        <select
+          name="searchArea"
+          id="searchArea"
+          title="지역 선택"
+          value={selectedArea}
+          onChange={handleAreaChange}>
+          <option value="">지역</option>
+          <option value="서울">서울</option>
+          <option value="인천">인천</option>
+          <option value="대전">대전</option>
+          <option value="대구">대구</option>
+          <option value="광주">광주</option>
+          <option value="부산">부산</option>
+          <option value="울산">울산</option>
+          <option value="세종">세종</option>
+          <option value="경기">경기도</option>
+          <option value="강원">강원도</option>
+          <option value="충북">충청북도</option>
+          <option value="충남">충청남도</option>
+          <option value="경북">경상북도</option>
+          <option value="경남">경상남도</option>
+          <option value="전북">전라북도</option>
+          <option value="전남">전라남도</option>
+          <option value="제주">제주도</option>
+        </select>
+      </div>
+      <div className='searchResultsContainer'>
+        {searched.map((item) => (
+          <Card key={item.id} {...item} />
+        ))}
+      </div>
+    </div>
   );
 };
 
