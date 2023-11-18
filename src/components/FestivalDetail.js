@@ -1,24 +1,80 @@
-// FestivalDetail.js
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import festivalsData from '../data/festivalData';
+import festivalsData from '../data/festivalsData';
+import { FaHeart } from 'react-icons/fa';
+import '../css/FestivalDetail.css';
 
-function FestivalDetail() {
-  // useParams 훅을 사용하여 라우팅 매개변수(id)를 가져옵니다.
+const FestivalDetail = () => {
   const { id } = useParams();
-  const festivalId = parseInt(id);
-  const festival = festivalsData.find((item) => item.id === festivalId);
+  const festival = festivalsData.find((item) => item.id === parseInt(id));
+
+  const [festivalStatus, setFestivalStatus] = useState('');
+
+  const [liked, setLiked] = useState(false); // Added state for liked status
+  const [likes, setLikes] = useState(festival.likes);
+
+  useEffect(() => {
+    if (!festival) {
+      // Handle the case where the festival is not found.
+      return;
+    }
+
+    const currentDate = new Date();
+    const startDate = new Date(festival.date[0]);
+    const endDate = new Date(festival.date[1]);
+
+    let status = '';
+
+    if (currentDate < startDate) {
+      status = '축제 예정';
+    } else if (currentDate > endDate) {
+      status = '축제 종료';
+    } else {
+      status = '축제 진행 중';
+    }
+
+    setFestivalStatus(status);
+  }, [festival]);
 
   if (!festival) {
-    return <div>해당하는 축제가 없습니다.</div>;
+    return <div>Festival not found</div>;
   }
+  const handleLike = () => {
+    setLiked((prevLiked) => !prevLiked);
+    setLikes((prevLikes) => (liked ? prevLikes - 1 : prevLikes + 1));
+  };
 
   return (
-    <div>
-      <h1>{festival.name}</h1>
-      <p>{festival.location}</p>
-      <p>{festival.date}</p>
-      {/* 다른 필요한 정보 출력 */}
+    <div className="yellow-section">
+      <div className='content-margin'>
+        <div className='center'>국내 축제</div>
+        <span className='bold-text-main'>축제 메인으로</span>
+        <div style={{ display: 'flex', marginBottom: '30px' }}>
+          <div className='inline_block'>
+            <div className='sub_title'>{festival.description}</div>
+            <div className='bold-title'>{festival.name}</div>
+            <div>{festivalStatus}</div>
+            <div className='bold-text'>{Array.isArray(festival.date) ? festival.date.join(' ~ ') : festival.date}</div>
+          </div>
+          <div className='inline_block_img'><img src={festival.poster} alt={festival.name} className="poster-image" /></div>
+        </div>
+
+        <div style={{ display: 'flex', justifyContent: 'space-around' }}>
+          <img src={festival.image1} alt="축제 이미지1" className="festival-image" />
+          <img src={festival.image2} alt="축제 이미지2" className="festival-image" />
+          <img src={festival.image3} alt="축제 이미지3" className="festival-image" />
+        </div>
+        <p>{festival.detail_description}</p>
+        <p>좋아요 수: <button onClick={handleLike}>
+          <FaHeart style={{ color: liked ? 'red' : 'grey' }} />
+          {likes}
+        </button></p>
+        <p>위치: {festival.location}</p>
+        <p>상세 위치: {festival.detail_location}</p>
+        <p>전화번호: {festival.tel}</p>
+        <p>시간: {festival.time}</p>
+        <p>입장료: {festival.pay}</p>
+      </div>
     </div>
   );
 }
