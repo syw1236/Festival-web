@@ -1,4 +1,5 @@
 import React from "react";
+
 import { BrowserRouter as Router, Route, Routes, Link, Navigate } from "react-router-dom";
 import Main from "./components/MainPage/Main";
 import FestivalDetail from "./components/FestivalDetail";
@@ -15,6 +16,8 @@ function App() {
       </Routes>
     </Router>
   );
+
+
 }
 
 export default App;

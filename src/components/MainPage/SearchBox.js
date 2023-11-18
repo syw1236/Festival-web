@@ -1,7 +1,9 @@
+
 import React, { useState, useEffect, useRef } from "react";
 import festivalsData from "../../data/festivalsData";
 import { FaSearch } from "react-icons/fa";
 import "../../css/SearchBox.css"; // Import the CSS file
+
 
 function SearchBox() {
   const [searchTerm, setSearchTerm] = useState("");
@@ -80,6 +82,7 @@ function SearchBox() {
   };
 
   return (
+
     <div ref={searchContainerRef} className="search-container">
       <input
         type="text"
@@ -107,8 +110,10 @@ function SearchBox() {
           ))}
         </ul>
       )}
+
     </div>
   );
 }
 
 export default SearchBox;
+
