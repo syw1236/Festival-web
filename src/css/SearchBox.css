@@ -1,0 +1,45 @@
+/* Add your styles here */
+.search-container {
+  position: relative;
+}
+
+.search-input {
+  width: 250px; /* Adjust the width as needed */
+  height: 30px;
+  border: 1px solid green; /* Add a border */
+}
+
+.search-button {
+  width:30px;
+  height: 30px;
+  margin-left: 5px;
+  background: transparent; /* Set background to transparent */
+  border: none; /* Remove border */
+  outline: none; /* Remove the default focus outline */
+  cursor: pointer; /* Change cursor on hover */
+}
+.autocomplete-list {
+  border: 1px solid #ccc; /* Add a border */
+  background-color:#f4f4f4;
+  border-radius: 10px; /* Add border-radius for a round rectangle */
+  list-style-type: none;
+  padding: 10px; /* Add padding for spacing */
+  margin: 0; /* Reset margin for the ul element */
+  position: absolute;
+  top: 40px;
+  left: 0;
+  width: 250px; /* Adjust the width as needed */
+  max-height: 300px; /* Adjust the max-height as needed */
+  overflow-y: auto;
+  z-index: 1;
+}
+
+.autocomplete-list li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.autocomplete-list li .search-icon {
+  margin-right: 8px;
+}

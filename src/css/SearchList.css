@@ -1,0 +1,106 @@
+/* Add these styles to your SearchList.css file */
+
+.searchListTitle {
+    font-size: 24px;
+    color: #333;
+  }
+  
+  .search-box {
+    width: 300px;
+    height: 50px;
+    padding: 10px;
+    border: 2px solid #7fff7f; /* Green border */
+    border-radius: 20px; /* Rounded corners */
+    margin-bottom: 20px;
+  }
+  
+  .cardContainer {
+    display: inline-block;
+    margin: 10px;
+    text-align: center;
+  }
+  
+  .cardContainer img {
+    width: 200px;
+    height: 200px;
+  }
+  
+  .cardContainer h2 {
+    margin: 10px 0;
+    font-size: 18px;
+  }
+  
+  .cardContainer p {
+    margin: 5px 0;
+    color: #555;
+  }
+  
+  .cardContainer button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    margin-top: 5px;
+  }
+  
+  .cardContainer button:hover {
+    color: red;
+  }
+  
+  /* Additional styling for a clean layout */
+  body {
+    font-family: 'Arial', sans-serif;
+  }
+  
+  .container {
+    max-width: 800px;
+    margin: auto;
+  }
+  
+  /* Center the content */
+  .text-center {
+    text-align: center;
+  }
+  
+  /* Add these styles to your SearchList.css file */
+
+.searchListContainer {
+    text-align: center;
+  }
+  
+  .searchResultsContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  /* Style for the container */
+.select-container {
+    position: relative;
+    display: inline-block;
+    width: 150px; /* Adjust the width as needed */
+    height: 100px;
+  }
+  
+  /* Style for the dropdown */
+  #searchArea {
+    width: 100%;
+    height: 50%;
+    padding: 10px;
+    font-size: 20px;
+    border: 1px solid #000; /* Black border */
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: white;
+  }
+  
+  /* Style for the selected text */
+  #searchArea option[value=""] {
+    color: #777; /* Gray color for the default text */
+  }
+
+  
+  
+
+
+  
+  
