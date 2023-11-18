@@ -1,7 +1,7 @@
 // src/data/festivalsData.js
 
 
-export const festivalsData = [
+const festivalsData = [
     // 제주도==============================================
     {
         id: 301,
@@ -41,9 +41,9 @@ export const festivalsData = [
         id: 303,
         name: "제주감귤박람회",
         poster: "/image/Jeju/Tangerine/poster.jpg",
-        image1: "/image/Jeju/Tangerine/1.jpg",
+        image1: "/image/Jeju/Tangerine/1.png",
         image2: "/image/Jeju/Tangerine/2.jpg",
-        image3: "/image/Jeju/Tangerine/3.png",
+        image3: "/image/Jeju/Tangerine/3.jpg",
         description: "감귤의 우수성과 미래의 가치를 제시하는 박람회",
         detail_description: "제주의 상징과도 같은 감귤을 주제로 열리는 박람회로 총 8개의 전시관과 각 체험프로그램, 경연대회, 바이어상담회, 강연, 학술대회 등 오감을 만족시키는 각종 컨텐츠들이 총 5일 동안 펼쳐질 예정이다. 직접 감귤을 먹고 즐기는 것을 넘어서서 감귤로 만들어진 다양한 제품을 관람하고 감귤을 주제로 한 다양한 경연대회와 체험을 경험함으로써 감귤의 우수성과 미래의 가치를 제시하는 박람회이다.",
         likes: 342,
@@ -60,7 +60,7 @@ export const festivalsData = [
         poster: "/image/Jeju/pet/poster.jpg",
         image1: "/image/Jeju/pet/1.jpg",
         image2: "/image/Jeju/pet/2.jpg",
-        image3: "/image/Jeju/pet/3.png",
+        image3: "/image/Jeju/pet/3.jpg",
         description: "우리집 막둥이와 함께하는 행복한 시간",
         detail_description: "<2023 제주 반려동물 문화축제>는 올바른 반려동물 문화 정착으로 사람과 동물이 행복한 제주를 위한 축제이다.\n 펫티켓 교육, 성숙한 반려동물 문화 홍보 캠페인부터 각종 반려동물 관련 체험 프로그램까지 반려인과 일반인을 포함한 모든 사람이 함께 즐길 수 있는 다양한 프로그램이 진행될 예정이다.",
         likes: 234,
@@ -91,9 +91,9 @@ export const festivalsData = [
     {
         id: 306,
         name: "한라산 청정 고사리축제",
-        poster: "/image/Jeju/bracken/poster.jpg",
-        image1: "/image/Jeju/bracken/1.jpg",
-        image2: "/image/Jeju/bracken/2.jpg",
+        poster: "/image/Jeju/bracken/poster.png",
+        image1: "/image/Jeju/bracken/1.png",
+        image2: "/image/Jeju/bracken/2.png",
         image3: "/image/Jeju/bracken/3.png",
         description: "꺾으멍, 걸으멍, 쉬멍 남원읍으로 옵써예",
         detail_description: "꺾으멍, 걸으멍, 쉬멍, 남원읍으로 옵써예(꺾고, 걷고, 쉬고, 남원읍으로 오세요)'를 슬로건으로 하는 이번 행사에서는 고사리 꺾기 대회를 비롯해, 고사리를 직접 삶고 말려보는 고사리 풍습 체험, 고사리 음식 만들기, 고사리 백일장, 노래자랑 대회 등 다양한 프로그램이 운영한다.",
@@ -514,4 +514,6 @@ export const festivalsData = [
         time: "10:00 ~ 21:00",
         pay: "무료",
     },
-]
+];
+
+export default festivalsData;
