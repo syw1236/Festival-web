@@ -77,6 +77,6 @@ const FestivalDetail = () => {
       </div>
     </div>
   );
-};
+}
 
 export default FestivalDetail;
