@@ -14,20 +14,18 @@ import { BiWon } from "react-icons/bi";
 import ImageSlider from './ImageSlider';
 
 
-
 const { kakao } = window;
-
 const FestivalDetail = () => {
     const { id } = useParams(); // 객체 구조 분해 할당으로 id값 가져옴
     const festival = festivalsData.find((item) => item.id === parseInt(id));
-
     const [festivalStatus, setFestivalStatus] = useState('');
 
     const [liked, setLiked] = useState(false);
     const [likes, setLikes] = useState(festival.likes);
 
+    const [currentImage, setCurrentImage] = useState(0);
     const [isImageModalOpen, setIsImageModalOpen] = useState(false);
-
+    
     const [isModalOpen, setIsModalOpen] = useState(false); // 모달창 상태 관리를 위한 state
     const [coords, setCoords] = useState(null); // 좌표 상태 관리를 위한 state
 
@@ -105,7 +103,8 @@ const FestivalDetail = () => {
         setLikes((prevLikes) => (liked ? prevLikes - 1 : prevLikes + 1));
     };
 
-    const openImageModal = () => {
+    const openImageModal = (index) => {
+        setCurrentImage(index);
         setIsImageModalOpen(true);
     };
     
@@ -113,7 +112,6 @@ const FestivalDetail = () => {
         setIsImageModalOpen(false);
     };
     
-
     return (
         <div className="yellow-section">
             <div className='content-margin'>
@@ -133,11 +131,10 @@ const FestivalDetail = () => {
                     <div className='inline_block_img'><img src={festival.poster} alt={festival.name} className="poster-image" /></div>
                 </div>
                 <div className="image-container">
-                    <img src={festival.image1} alt="축제 이미지1" className="festival-image" onClick={openImageModal} />
-                    <img src={festival.image2} alt="축제 이미지2" className="festival-image" onClick={openImageModal} /> 
-                    <img src={festival.image3} alt="축제 이미지3" className="festival-image" onClick={openImageModal} /> 
+                    <img src={festival.image1} alt="축제 이미지1" className="festival-image" onClick={() => openImageModal(0)} />
+                    <img src={festival.image2} alt="축제 이미지2" className="festival-image" onClick={() => openImageModal(1)} /> 
+                    <img src={festival.image3} alt="축제 이미지3" className="festival-image" onClick={() => openImageModal(2)} /> 
                 </div>
-                {/*<ImageSlider images={[festival.image1, festival.image2, festival.image3]} />*/}
                 <p className='festival-description'>{festival.detail_description}</p>
                 <hr className="line"/>
                 <div className='information'>
@@ -159,7 +156,7 @@ const FestivalDetail = () => {
                 contentLabel="Image Modal"
                 className="modal-img-content"
                 overlayClassName="modal-overlay">
-                    <ImageSlider images={[festival.image1, festival.image2, festival.image3]} />
+                    <ImageSlider images={[festival.image1, festival.image2, festival.image3]} initialSlide={currentImage} />
                     <IoMdCloseCircle onClick={closeImageModal} className="close-button" />
                 </Modal>
 
@@ -173,7 +170,6 @@ const FestivalDetail = () => {
                     <IoMdCloseCircle onClick={closeModal} className="close-button" />
                 </Modal>
             </div>
-            
         </div>
     );
 };
