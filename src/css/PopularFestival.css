@@ -1,0 +1,23 @@
+.region {
+  font-weight: 1000;
+  font-size: 1.5rem;
+}
+.regionDes {
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+.popularityContain {
+  display: inline-block;
+  position: relative;
+  left: 25.8%;
+  top: 4vh;
+  background-color: rgb(206, 220, 255);
+  padding: 8px;
+  border-radius: 20px;
+}
+.festivalSimpleContain {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
