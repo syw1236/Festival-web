@@ -14,13 +14,13 @@ const PopularFestival = ({ festivals }) => {
     <div className="currentpopularity">
       <div className="popularityContain">
         {/* 클릭한 지역의 현재 인기 축제 */}
-        <span className="region">{festivals[0].location} </span>
+        <span className="popularityregion">{festivals[0].location} </span>
         <span className="regionDes">현재 인기 축제</span>
       </div>
-      <div className="festivalSimpleContain">
+      <div className="festivalSimpleContainer">
         {/* 클릭한 지역의 인기 축제 6개를 한 줄에 3개씩 나타냄 */}
         {dividedArrays.map((row, rowIndex) => (
-          <div key={rowIndex}>
+          <div key={rowIndex} className="festivalsimple">
             {row.map((item, itemIndex) => (
               <FestivalSimple key={itemIndex} festival={item} />
             ))}
