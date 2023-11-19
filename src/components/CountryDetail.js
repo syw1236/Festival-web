@@ -116,14 +116,14 @@ function CountryDetail() {
           <div className="clickCountry">
             <img
               src={activeIndex == null ? "" : Countrys[activeIndex].image}
-              width={20}
-              height={20}
+              width={30}
+              height={30}
               alt={activeIndex == null ? "" : Countrys[activeIndex].region}
               className="countryImage"
             />
-            <p className="clickCountryName">
+            <div className="clickCountryName">
               {activeIndex !== null && Countrys[activeIndex].region}
-            </p>
+            </div>
             <img
               className="arrow"
               src="/image/icon/arrow.png"
