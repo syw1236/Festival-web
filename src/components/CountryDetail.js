@@ -3,7 +3,7 @@ import RepFestivalList from "./RepFestivalList";
 import PopularFestival from "./PopularFestival";
 import Calendar from "./Calendar";
 import "../css/CountryDetail.css";
-import data from "../data/FestivalsData";
+import data from "../data/examData";
 
 const Countrys = [
   {
@@ -88,9 +88,7 @@ function CountryDetail() {
   };
 
   useEffect(() => {
-    const filterlocationArray = data.filter(
-      (item) => item.location === Countrys[activeIndex].region
-    );
+    const filterlocationArray = data.filter((item) => item.location === Countrys[activeIndex].region);
     setFestivalArray(filterlocationArray);
   }, [activeIndex]);
 
@@ -121,24 +119,13 @@ function CountryDetail() {
               alt={activeIndex == null ? "" : Countrys[activeIndex].region}
               className="countryImage"
             />
-            <div className="clickCountryName">
-              {activeIndex !== null && Countrys[activeIndex].region}
-            </div>
-            <img
-              className="arrow"
-              src="/image/icon/arrow.png"
-              width={30}
-              height={30}
-              alt="arrow.png"
-            />
+            <div className="clickCountryName">{activeIndex !== null && Countrys[activeIndex].region}</div>
+            <img className="arrow" src="/image/icon/arrow.png" width={30} height={30} alt="arrow.png" />
           </div>
         </div>
         <div className="repFestival">
           {/* 클릭한 지역의 축제 D-day 표시*/}
-          <RepFestivalList
-            data={festivalArray}
-            country={Countrys[activeIndex].region}
-          />
+          <RepFestivalList data={festivalArray} country={Countrys[activeIndex].region} />
         </div>
       </div>
 
