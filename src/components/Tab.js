@@ -1,7 +1,7 @@
 // Tab.js
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import '../css/Tab.css'; // Import the CSS file
+import '../css/Tab.css';
 
 const Tab = ({ festivalsData }) => {
   const [currentTab, clickTab] = useState(0);
@@ -16,20 +16,23 @@ const Tab = ({ festivalsData }) => {
     clickTab(index);
   };
 
-  function includesAnyKeyword(festival) {
-    const keywords = ['한우', '곶감', '쌀', '김장', '포도', '고추', '누들'];
-    const lowercaseName = festival.name.toLowerCase();
-
-    return keywords.some(keyword => lowercaseName.includes(keyword));
-  }
-
   const filteredFestivals = festivalsData.filter((festival) => {
+    const tab0Keywords = ['빛','이월드','밤마실'];
+    const tab1Keywords = ['해맞이'];
+    const tab2Keywords = ['한우', '곶감', '쌀', '김장', '포도', '고추', '누들','음식','와인','김치','빵','감귤','고사리','보쌈','장','비빔밥','유자','꼬막','씨푸드','라면','사과','인삼'];
+  
     if (currentTab === 0) {
-      return festival.name.toLowerCase().includes('빛');
+      return tab0Keywords.some((keyword) =>
+        festival.name.toLowerCase().includes(keyword)
+      );
     } else if (currentTab === 1) {
-      return festival.name.toLowerCase().includes('해맞이');
+      return tab1Keywords.some((keyword) =>
+        festival.name.toLowerCase().includes(keyword)
+      );
     } else if (currentTab === 2) {
-      return includesAnyKeyword(festival);
+      return tab2Keywords.some((keyword) =>
+        festival.name.toLowerCase().includes(keyword)
+      );
     }
     return false;
   });
@@ -42,25 +45,26 @@ const Tab = ({ festivalsData }) => {
             <li
               key={index}
               className={index === currentTab ? 'submenu focused' : 'submenu'}
-              onClick={() => selectMenuHandler(index)}
-            >
+              onClick={() => selectMenuHandler(index)}>
               {el.name}
             </li>
           ))}
         </ul>
         <div className="desc">
           <p>{menuArr[currentTab].content}</p>
-          {/* Display related data based on the selected tab */}
           <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center' }}>
             {filteredFestivals.map((item) => (
               <div className="festival-card" key={item.id}>
-                {/* Render the relevant data properties */}
                 <p>{item.name}</p>
                 <Link to={`/festival_detail/${item.id}`}>
-                  <img src={item.poster} alt={item.name} />
+                  <div className="posterContainer">
+                    <img src={item.poster} alt={item.name} />
+                    <div className="overlay">
+                      <p>{item.detail_location}</p>
+                    </div>
+                  </div>
                 </Link>
                 <p>{item.location}</p>
-                {/* Add other properties as needed */}
               </div>
             ))}
           </div>
