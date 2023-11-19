@@ -1,15 +1,12 @@
-// Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
+import { Link } from "react-router-dom";
 
-// Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
-import "./CalendarSwiper.css";
+import "../css/CalendarSwiper.css";
+// import "./CalendarSwiper.css";
 
-// import "./styles.css";
-
-// import required modules
 import { Pagination, Navigation } from "swiper/modules";
 
 const CalendarSwiper = ({ festivals }) => {
@@ -30,27 +27,47 @@ const CalendarSwiper = ({ festivals }) => {
     <div className="swiperContainer">
       <Swiper
         slidesPerView={3}
-        spaceBetween={50}
+        spaceBetween={40}
         loop={true}
         pagination={{
           clickable: true,
         }}
         navigation={true}
         modules={[Pagination, Navigation]}
-        style={{ width: "1050px" }}
+        style={{ width: "61%" }}
         className="mySwiper"
       >
-        {festivals.map((festival, i) => (
-          <SwiperSlide key={i} className="imgContainer">
-            <img
-              src={festival.poster}
-              width={350}
-              height={450}
-              alt={`festival-${i}`}
-              className="image"
-            />
-          </SwiperSlide>
-        ))}
+        <div className="posterContainer">
+          {festivals.map((festival, i) => {
+            if (festival.id === -1) {
+              return (
+                <div>
+                  <SwiperSlide key={i} className="imgContainer">
+                    <img
+                      className="image"
+                      src={festival.poster}
+                      alt={`festival-${i}`}
+                    />
+                  </SwiperSlide>
+                </div>
+              );
+            } else {
+              return (
+                <div>
+                  <SwiperSlide key={i} className="imgContainer">
+                    <Link to={`/festival_detail/${festival.id}`}>
+                      <img
+                        src={festival.poster}
+                        alt={`festival-${i}`}
+                        className="image"
+                      />
+                    </Link>
+                  </SwiperSlide>
+                </div>
+              );
+            }
+          })}
+        </div>
       </Swiper>
     </div>
   );
