@@ -115,7 +115,7 @@ const Calendar = ({ festivals }) => {
   return (
     <div className="tatalCalendarContainer">
       <div className="festivalschedule">
-        <span className="region">{festivals[0].location} </span>
+        <span className="scheduleregion">{festivals[0].location} </span>
         <span className="schedulDes">축제 일정</span>
       </div>
       <div className="CalendarContainer">
