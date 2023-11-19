@@ -1,12 +1,13 @@
 .RepFestivalContainer {
   border: 2px solid black;
-  bottom: 10px;
   background-color: white;
-  margin-right: 50px;
-  margin-top: 10px;
 
-  width: 280px;
-  height: 280px;
+  margin-right: 3rem;
+  margin-top: 0.2%;
+
+  width: 14.5%;
+  height: 11.5rem;
+  padding-bottom: 5.5rem;
 }
 .dayRemain {
   background-color: black;
@@ -16,7 +17,7 @@
   padding-right: 15px;
   padding-top: 3px;
   padding-bottom: 3px;
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   position: relative;
   right: 30px;
 }
@@ -42,12 +43,16 @@ li {
   background-color: transparent;
   border-color: rgb(140, 140, 140);
   color: rgb(140, 140, 140);
-  font-size: 16px;
-  margin-left: 60%;
-  margin-top: 2%;
+  font-size: 1.1rem;
   cursor: pointer;
 }
 
 .fesitvalInfoContainer {
   height: 80%;
+}
+.moveDetail {
+  position: relative;
+  left: 1%;
+  top: 30%;
+  margin-left: 63%;
 }
