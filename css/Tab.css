@@ -1,0 +1,50 @@
+/* Tab.css */
+
+.purple-background {
+    background-color: #d8c4e9; /* Light purple color */
+  }
+  
+  .tab-menu {
+    color: black;
+    font-weight: bold;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    list-style: none;
+    margin-bottom: 7rem;
+    margin-top: 10px;
+    margin-left: 100px; /* Add margin on the left */
+    margin-right: 100px; /* Add margin on the right */
+  }
+  
+  .submenu {
+    display: flex;
+    width: calc(100% / 3);
+    padding: 10px;
+    font-size: 15px;
+    transition: 0.5s;
+    border-radius: 0px 0px 0px 0px;
+    border: 2px solid white;
+    cursor: pointer;
+  }
+  
+  .focused {
+    background-color: rgb(255, 255, 255);
+    color: rgb(21, 20, 20);
+  }
+  
+  .desc {
+    text-align: center;
+  }
+  
+  .festival-card {
+    margin: 5px;
+    padding: 5px;
+    text-align: center;
+  }
+  
+  .festival-card img {
+    width: 200px;
+    height: 200px;
+  }
+  
