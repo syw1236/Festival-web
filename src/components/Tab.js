@@ -1,56 +1,7 @@
+// Tab.js
 import React, { useState } from 'react';
-import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-
-const TabMenu = styled.ul`
-  color: black; /* Set text color for tabs */
-  font-weight: bold;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  list-style: none;
-  margin-bottom: 7rem;
-  margin-top: 10px;
-  margin-left: 100px; /* Add margin on the left */
-  margin-right: 100px; /* Add margin on the right */
-
-  .submenu {
-    display: flex;
-    width: calc(100% / 3);
-    padding: 10px;
-    font-size: 15px;
-    transition: 0.5s;
-    border-radius: 0px 0px 0px 0px;
-    border: 2px solid white;
-    cursor: pointer;
-  }
-
-  .focused {
-    background-color: rgb(255, 255, 255);
-    color: rgb(21, 20, 20);
-  }
-`;
-
-const Desc = styled.div`
-  text-align: center;
-`;
-
-const FestivalCard = styled.div`
-  /* Adjust the styling of the festival card as needed */
-  margin: 5px;
-  padding: 5px;
-  text-align: center;
-
-  img {
-    width: 200px;
-    height: 200px;
-  }
-`;
-
-// Set the overall background color for the component
-const PurpleBackground = styled.div`
-  background-color: #d8c4e9; /* Light purple color */
-`;
+import '../css/Tab.css'; // Import the CSS file
 
 const Tab = ({ festivalsData }) => {
   const [currentTab, clickTab] = useState(0);
@@ -58,28 +9,35 @@ const Tab = ({ festivalsData }) => {
   const menuArr = [
     { name: '낮보다 밤이 좋은', content: '#야경 #빛' },
     { name: '새해복 많이많이', content: '#해돋이 #새해' },
+    { name: '먹거리 축제', content: '#음식 #먹거리' },
   ];
 
   const selectMenuHandler = (index) => {
     clickTab(index);
   };
 
-  const filteredFestivals = festivalsData
-    .filter((festival) => {
-      if (currentTab === 0) {
-        // Filter festivals where the name contains '빛'
-        return festival.name.toLowerCase().includes('빛');
-      } else if (currentTab === 1) {
-        // Filter festivals where the name contains '해돋이' (case-insensitive)
-        return festival.name.toLowerCase().includes('해맞이');
-      }
-      return false;
-    });
+  function includesAnyKeyword(festival) {
+    const keywords = ['한우', '곶감', '쌀', '김장', '포도', '고추', '누들'];
+    const lowercaseName = festival.name.toLowerCase();
+
+    return keywords.some(keyword => lowercaseName.includes(keyword));
+  }
+
+  const filteredFestivals = festivalsData.filter((festival) => {
+    if (currentTab === 0) {
+      return festival.name.toLowerCase().includes('빛');
+    } else if (currentTab === 1) {
+      return festival.name.toLowerCase().includes('해맞이');
+    } else if (currentTab === 2) {
+      return includesAnyKeyword(festival);
+    }
+    return false;
+  });
 
   return (
-    <PurpleBackground>
+    <div className="purple-background">
       <div>
-        <TabMenu>
+        <ul className="tab-menu">
           {menuArr.map((el, index) => (
             <li
               key={index}
@@ -89,13 +47,13 @@ const Tab = ({ festivalsData }) => {
               {el.name}
             </li>
           ))}
-        </TabMenu>
-        <Desc>
+        </ul>
+        <div className="desc">
           <p>{menuArr[currentTab].content}</p>
           {/* Display related data based on the selected tab */}
           <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center' }}>
             {filteredFestivals.map((item) => (
-              <FestivalCard key={item.id}>
+              <div className="festival-card" key={item.id}>
                 {/* Render the relevant data properties */}
                 <p>{item.name}</p>
                 <Link to={`/festival_detail/${item.id}`}>
@@ -103,12 +61,12 @@ const Tab = ({ festivalsData }) => {
                 </Link>
                 <p>{item.location}</p>
                 {/* Add other properties as needed */}
-              </FestivalCard>
+              </div>
             ))}
           </div>
-        </Desc>
+        </div>
       </div>
-    </PurpleBackground>
+    </div>
   );
 };
 

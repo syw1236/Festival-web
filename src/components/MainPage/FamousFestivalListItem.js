@@ -59,7 +59,6 @@ function FamousFestivalListItem({ data }) {
       <Poster src={data.poster} />
       <LikePrint onClick={handleLike}>
         <FaHeart size={25} color={liked ? "red" : "grey"} />
-
         <LikeCount>{likes}</LikeCount>
       </LikePrint>
     </ListItem>

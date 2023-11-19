@@ -1,45 +1,44 @@
-/* Add your styles here */
+/* Your styles.css or styles.scss */
+
 .search-container {
   position: relative;
+  display: inline-block; 
 }
 
 .search-input {
-  width: 250px; /* Adjust the width as needed */
-  height: 30px;
-  border: 1px solid green; /* Add a border */
+  width: 500px;
+  height: 50px;
+  border: 1px solid rgb(170, 175, 170);
+  padding-right: 30px;
+  box-sizing: border-box;
+  border-radius: 10px;
 }
 
-.search-button {
-  width:30px;
-  height: 30px;
-  margin-left: 5px;
-  background: transparent; /* Set background to transparent */
-  border: none; /* Remove border */
-  outline: none; /* Remove the default focus outline */
-  cursor: pointer; /* Change cursor on hover */
-}
 .autocomplete-list {
-  border: 1px solid #ccc; /* Add a border */
-  background-color:#f4f4f4;
-  border-radius: 10px; /* Add border-radius for a round rectangle */
+  border: 1px solid #ccc;
+  background-color: #f4f4f4;
+  border-radius: 10px;
   list-style-type: none;
-  padding: 10px; /* Add padding for spacing */
-  margin: 0; /* Reset margin for the ul element */
+  padding: 10px;
+  margin: 0;
   position: absolute;
-  top: 40px;
+  top: 60px; /* Adjust the top spacing as needed */
   left: 0;
-  width: 250px; /* Adjust the width as needed */
-  max-height: 300px; /* Adjust the max-height as needed */
+  width: 500px;
+  max-height: 300px;
   overflow-y: auto;
   z-index: 1;
 }
 
-.autocomplete-list li {
+.autocomplete-item {
   display: flex;
   align-items: center;
   margin-bottom: 8px;
+  cursor: pointer;
 }
 
-.autocomplete-list li .search-icon {
-  margin-right: 8px;
+.search-icon {
+  margin-left: 10px;
+  margin-right: 10px;
+  font-size: 23px; /* Adjust the icon size as needed */
 }

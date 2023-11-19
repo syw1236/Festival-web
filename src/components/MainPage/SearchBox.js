@@ -1,9 +1,7 @@
-
 import React, { useState, useEffect, useRef } from "react";
 import festivalsData from "../../data/festivalsData";
 import { FaSearch } from "react-icons/fa";
 import "../../css/SearchBox.css"; // Import the CSS file
-
 
 function SearchBox() {
   const [searchTerm, setSearchTerm] = useState("");
@@ -82,19 +80,15 @@ function SearchBox() {
   };
 
   return (
-
     <div ref={searchContainerRef} className="search-container">
       <input
         type="text"
         value={searchTerm}
         onChange={handleInputChange}
         onFocus={() => setShowAutocomplete(true)}
-        placeholder="검색어를 입력하세요..."
-        className="search-input"
-      />
-      <button onClick={handleSearchClick} className="search-button">
-        <FaSearch />
-      </button>
+        placeholder="어떤 축제로 떠나볼까요?"
+        className="search-input"/>
+      <FaSearch onClick={handleSearchClick} className="search-icon" />
       <button onClick={handleMoreSearchClick}>더 많은 축제 검색해보기</button>
       {showAutocomplete && autocompleteResults.length > 0 && (
         <ul className="autocomplete-list">
@@ -110,10 +104,8 @@ function SearchBox() {
           ))}
         </ul>
       )}
-
     </div>
   );
 }
 
 export default SearchBox;
-

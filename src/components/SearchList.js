@@ -2,9 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { FaHeart } from 'react-icons/fa';
 import festivalsData from '../data/festivalsData';
-import Tab from './Tab';
 import '../css/SearchList.css';
-import TabPrint from './TabPrint';
 
 const SearchList = () => {
   const [festivals, setFestivals] = useState(festivalsData);
@@ -33,14 +31,13 @@ const SearchList = () => {
   const handleAreaChange = (e) => {
     setSelectedArea(e.target.value);
     if (e.target.value !== '') {
-      // If an area is selected, filter festivals based on the selected area (case-insensitive)
+
       setFestivals(
         festivalsData.filter((festival) =>
           festival.location.toLowerCase().includes(e.target.value.toLowerCase())
         )
       );
     } else {
-      // If no area is selected, show all festivals
       setFestivals(festivalsData);
     }
   };
@@ -49,11 +46,22 @@ const SearchList = () => {
     item.name.toLowerCase().includes(userInput)
   );
 
-  function Card({ id, name, location, likes, liked, poster }) {
+  function Card({ id, name, location, detail_location, likes, liked, poster }) {
+    const [isHovered, setIsHovered] = useState(false);
+  
     return (
-      <div className='cardContainer' style={{ display: 'inline-block', margin: '10px' }}>
+      <div
+        className={`cardContainer ${isHovered ? 'hovered' : ''}`}
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+      >
         <Link to={`/festival_detail/${id}`}>
-          <img src={poster} alt={name} style={{ width: '200px', height: '200px' }} />
+          <img src={poster} alt={name} />
+          {isHovered && (
+            <div className='overlay'>
+              <p>{detail_location}</p>
+            </div>
+          )}
         </Link>
         <h2>{name}</h2>
         <p>{location}</p>
@@ -64,12 +72,14 @@ const SearchList = () => {
       </div>
     );
   }
+  
+  
 
   return (
     <div className='searchListContainer'>
-      <h1 className='searchListTitle' style={{ textAlign: 'center' }}>Festival List</h1>
+      <h1 className='searchListTitle'> Festival List</h1>
       <div style={{ textAlign: 'center', marginBottom: '20px' }}>
-        <input onChange={getValue} className="search-box" style={{ width: '300px', height:'50px' }} placeholder='궁금한 축제를 입력하세요' />
+        <input onChange={getValue} className="search-box" placeholder='궁금한 축제를 입력하세요' />
       </div>
       <div className="select-container">
         <select
