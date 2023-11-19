@@ -18,6 +18,7 @@ const FestivalDetail = () => {
       // Handle the case where the festival is not found.
       return;
     }
+    console.log('Festival ID:', festival.id);
 
     const currentDate = new Date();
     const startDate = new Date(festival.date[0]);

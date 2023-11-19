@@ -1,8 +1,23 @@
 import React from "react";
-import Main from "./components/MainPage/Main";
 
+import { BrowserRouter as Router, Route, Routes, Link, Navigate } from "react-router-dom";
+import Main from "./components/MainPage/Main";
+import FestivalDetail from "./components/FestivalDetail";
+import SearchList from "./components/SearchList"; // Import SearchList component
+import TabPrint from "./components/TabPrint";
 function App() {
-  return <Main />;
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<Main />} />
+        <Route path="/festival_detail/:id" element={<FestivalDetail />} />
+        <Route path="/searchList" element={<SearchList />} />
+        <Route path="/TabPrint" element={<TabPrint />} />
+      </Routes>
+    </Router>
+  );
+
+
 }
 
 export default App;

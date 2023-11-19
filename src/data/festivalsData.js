@@ -1,9 +1,7 @@
-// data/festivalsData.js
-
 const festivalsData = [
   //경기도
   {
-    "id": 1,
+    "id": 1001,
     "name": "수원 화성 문화제",
     "poster": "/image/gyeonggi/1_poster.png", 
     "image1": "/image/gyeonggi/1_image_1.png",
@@ -20,7 +18,7 @@ const festivalsData = [
     "pay": "무료"
   },
     {
-        "id": 2,
+        "id": 1002,
         "name": "눈내림 별내림 불빛축제",
         "poster": "/image/gyeonggi/2_poster.jpg",
         "image1": "/image/gyeonggi/2_image_1.jpg",
@@ -39,7 +37,7 @@ const festivalsData = [
       
       // 데이터 3
       {
-        "id": 3,
+        "id": 1003,
         "name": "이천 쌀 문화 축제",
         "poster": "/image/gyeonggi/3_poster.jpg",
         "image1": "/image/gyeonggi/3_image_1.jpg",
@@ -51,7 +49,7 @@ const festivalsData = [
         "likes": 9483,
         "date": "[2023-10-18],[2023-11-31]", 
         "location": "경기도",
-        "detail_location": "설봉공원",
+        "detail_location": "경기도 이천시 관고동 418-2 설봉공원",
         "tel": "042-1234-5678",
         "time": "10:00 ~ 17:30",
         "pay": "무료"
@@ -59,7 +57,7 @@ const festivalsData = [
       
       // 데이터 4
       {
-        "id": 4,
+        "id": 1004,
         "name": "화성 뱃놀이 축제",
         "poster": "/image/gyeonggi/4_poster.jpg",
         "image1": "/image/gyeonggi/4_image_1.jpg",
@@ -78,7 +76,7 @@ const festivalsData = [
 
       //데이터 5
       {
-        "id": 5,
+        "id": 1005,
         "name": "군포 철쭉 축제",
         "poster": "/image/gyeonggi/5_poster.jpg",
         "image1": "/image/gyeonggi/5_image_1.jpg",
@@ -95,7 +93,7 @@ const festivalsData = [
         "pay": "무료"
       },
       {
-        "id": 6,
+        "id": 1006,
         "name": "부천 국제 만화 축제",
         "poster": "/image/gyeonggi/6_poster.jpg",
         "image1": "/image/gyeonggi/6_image_1.jpg",
@@ -114,7 +112,7 @@ const festivalsData = [
 
       //충청북도
       {
-        "id": 7,
+        "id": 1007,
         "name": "괴산 김장 축제",
         "poster": "/image/chungbuk/7_poster.jpg",
         "image1": "/image/chungbuk/7_image_1.jpg",
@@ -124,14 +122,14 @@ const festivalsData = [
         "detail_description": "전국 최초로 절임배추가 시작된 괴산에서 맛보는 괴산시골절임배추와 전국최고를 자랑하는 명품 괴산청결고추, 그리고 전국최고의 명품식재료로 준비된 괴산에서 김장준비하세요.",
         "likes": 5753,
         "date": "[2023-11-03],[2023-11-30]",
-        "location": "충청북도",
+        "location": "충북",
         "detail_location": "충청북도 괴산군 괴산읍 동진천길 197 괴산종합운동장",
         "tel": "043-830-3463",
         "time": "10:00 ~ 16:00",
         "pay": "무료"
         },
         {
-        "id": 8,
+        "id": 1008,
         "name": "영동 난계 국악 축제",
         "poster": "/image/chungbuk/8_poster.jpg",
         "image1": "/image/chungbuk/8_image_1.jpg",
@@ -141,14 +139,14 @@ const festivalsData = [
         "detail_description": "군민행사, 공연, 체험, 경연대회, 학술대회, 기타 부대행사로 분류하여 다양한 콘텐츠를 마련함으로써 국악학자, 국악연주자 등이 각각 참여할 수 있는 풍성한 프로그램을 운영하고 있습니다.",
         "likes": 1239,
         "date": "[2023-10-12],[2023-10-15]",
-        "location": "충청북도",
+        "location": "충북",
         "detail_location": "충청북도 영동군 영동힐링로 117",
         "tel": "043-745-8917",
         "time": "10:00 ~ 22:00",
         "pay": "무료"
         },
         {
-        "id": 9,
+        "id": 1009,
         "name": "지용제",
         "poster": "/image/chungbuk/9_poster.jpg",
         "image1": "/image/chungbuk/9_image_1.jpg",
@@ -158,14 +156,14 @@ const festivalsData = [
         "detail_description": "한국 현대시의 선구자이며 우리의 언어를 시적 형상화한 시인이자 우리 민족의 정서를 가장 잘 표현한 시인 정지용을 추모하고, 그의 시문학 정신을 이어가며 더욱 발전시키자는 뜻으로 '시인 정지용의 고향 옥천의 문화 축제'입니다.",
         "likes": 958,
         "date": "[2023-09-07],[2023-11-31]",
-        "location": "충청북도",
+        "location": "충북",
         "detail_location": "충청북도 옥천군 향수길 56",
         "tel": "043-730-3404",
         "time": "11:00 ~ 21:00",
         "pay": "무료"
         },
         {
-        "id": 10,
+        "id": 1010,
         "name": "영동 포도 축제",
         "poster": "/image/chungbuk/10_poster.jpg",
         "image1": "/image/chungbuk/10_image_1.jpg",
@@ -175,14 +173,14 @@ const festivalsData = [
         "detail_description": "한국 현대시의 선구자이며 우리의 언어를 시적 형상화한 시인이자 우리 민족의 정서를 가장 잘 표현한 시인 정지용을 추모하고, 그의 시문학 정신을 이어가며 더욱 발전시키자는 뜻으로 '시인 정지용의 고향 옥천의 문화 축제'입니다.",
         "likes": 958,
         "date": "[2023-08-24],[2023-08-27]",
-        "location": "충청북도",
+        "location": "충북",
         "detail_location": "충청북도 영동군 영동힐링로 117",
         "tel": "043-745-8918",
         "time": "10:00 ~ 18:00",
         "pay": "무료"
         },
         {
-        "id": 11,
+        "id": 1011,
         "name": "괴산 고추 축제",
         "poster": "/image/chungbuk/11_poster.jpg",
         "image1": "/image/chungbuk/11_image_1.jpg",
@@ -192,14 +190,14 @@ const festivalsData = [
         "detail_description": "전국 최고의 맛을 자랑하는 괴산청결고추를 비롯한 농특산물과 다양한 체험거리, 볼거리, 먹거리를 한곳에서 즐길 수 있는 괴산고추축제는 문화체육관광부 선정 문화관광유망축제이자 충청북도 우수축제입니다. 다가오는 여름 친환경 유기농업군 괴산에서 고추와 문화가 결합된 괴산고추축제에 가족, 연인, 친구와 방문하여 재미와 감동이 함께하는 시간을 가지시기 바랍니다.",
         "likes": 958,
         "date": "[2023-09-07],[2023-09-10]",
-        "location": "충청북도",
+        "location": "충북",
         "detail_location": "충북 괴산군 괴산읍 동진천길 197(괴산종합운동장)",
         "tel": "043-730-3404",
         "time": "11:00 ~ 21:00",
         "pay": "무료"
         },
         {
-        "id": 12,
+        "id": 1012,
         "name": "단양 온달 문화 축제",
         "poster": "/image/chungbuk/12_poster.jpg",
         "image1": "/image/chungbuk/12_image_1.jpg",
@@ -209,7 +207,7 @@ const festivalsData = [
         "detail_description": "단양군에서는 영춘면 일대의 온달관련 유적과 설화, 전설을 바탕으로 온달장군이 신라군과 일대격전을 치렀던 온달산성(아단성)과 4억 5천만년 태고의 신비를 고스란히 간직한 온달동굴, 연개소문, 태왕사신기, 일지매 촬영장소로 유명했던 온달 오픈 세트장 일대에서 96년부터 매년 가을 축제를 개최하여 오고 있습니다.",
         "likes": 234,
         "date": "[2023-10-06],[2023-11-31]",
-        "location": "충청북도",
+        "location": "충북",
         "detail_location": "충청북도 단양군 영춘면 온달로 23",
         "tel": "043-420-0700",
         "time": "18:30 ~ 21:00",
@@ -218,7 +216,7 @@ const festivalsData = [
 
         //충청남도
         {
-          "id": 13,
+          "id": 1013,
           "name": "칠갑산 얼음분수 축제",
           "poster": "/image/chungnam/13_poster.jpg",
           "image1": "/image/chungnam/13_image_1.jpg",
@@ -228,14 +226,14 @@ const festivalsData = [
           "detail_description": "짜릿한 썰매장과 매년 달라지는 얼음조각, 눈조각 등 많은 볼거리와 다양한 체험까지 할 수 있는 알프스마을 대표 축제입니다.",
           "likes": 12459,
           "date": "[2024-01-01],[2024-02-19]",
-          "location": "충청남도",
+          "location": "충남",
           "detail_location": "충청남도 청양군 정산면 천장리 164-1 알프스마을",
           "tel": "041-942-0797",
           "time": "09:00 ~ 20:00",
           "pay": "무료"
           },
           {
-          "id": 14,
+          "id": 1014,
           "name": "보령 머드 축제",
           "poster": "/image/chungnam/14_poster.jpg",
           "image1": "/image/chungnam/14_image_1.jpg",
@@ -245,14 +243,14 @@ const festivalsData = [
           "detail_description": "보령 머드 축제는 대천해수욕장을 기반으로 개최되는 지역 축제로, 한국의 가장 대표적인 여름 축제입니다.",
           "likes": 98762,
           "date": "[2023-07-21],[2023-08-06]",
-          "location": "충청남도",
+          "location": "충남",
           "detail_location": "충청남도 보령시 고잠2길55",
           "tel": "041-930-0891",
           "time": "10:00 ~ 18:00",
           "pay": "유료"
           },
           {
-          "id": 15,
+          "id": 1015,
           "name": "양촌 곶감 축제",
           "poster": "/image/chungnam/15_poster.jpg",
           "image1": "/image/chungnam/15_image_1.jpg",
@@ -262,14 +260,14 @@ const festivalsData = [
           "detail_description": "맑고 깨끗한 환경에서 자란 품질 좋은 양촌의 농ㆍ특산물과 양촌사람들의 넉넉한 인심을 널리 알리는 계기가 되고 있는 충청도 특유의 인심 좋고 다양한 볼거리, 즐길거리가 있는 테마가 있는 축제로 지역 주민이나 전국에서 관광객들이 해마다 늘어나는 추세로 시민축제가 아닌 전국적인 축제로 거듭나고 있습니다.",
           "likes": 127,
           "date": "[2023-12-09],[2023-12-11]",
-          "location": "충청남도",
+          "location": "충남",
           "detail_location": "충청남도 논산시 가야곡면 등리 437-1 양촌리 체육공원",
           "tel": "041-742-5707",
           "time": "10:30 ~ :17:30",
           "pay": "무료"
           },
           {
-          "id": 16,
+          "id": 1016,
           "name": "태안 빛축제",
           "poster": "/image/chungnam/16_poster.jpg",
           "image1": "/image/chungnam/16_image_1.jpg",
@@ -279,14 +277,14 @@ const festivalsData = [
           "detail_description": "아름다운 빛축제를 보면서 사랑하는 사람들과 낭만에 젖고, 즐겁게 사진을 찍으며 매 시즌마다 새롭게 변화하는 빛축제에도 많은 응원 부탁드립니다.",
           "likes": 3205,
           "date": "[2023-01-01],[2023-12-31]",
-          "location": "충청남도",
+          "location": "충남",
           "detail_location": "충청남도 태안군 남면 마검포길 200 (신온리)",
           "tel": "041-675-9200",
           "time": "17:30 ~ 21:00",
           "pay": "유료"
           },
           {
-          "id": 17,
+          "id": 1017,
           "name": "부여 서동 연꽃 축제",
           "poster": "/image/chungnam/17_poster.jpg",
           "image1": "/image/chungnam/17_image_1.jpg",
@@ -296,14 +294,14 @@ const festivalsData = [
           "detail_description": "연꽃화원에 피어난 사랑 이야기를 간직한 스물 한살 연꽃화원에서 펼쳐지는 형형색색의 야간경관과 다채로운 공연무대, 밤에는 일곱가지 테마의 연꽃정원을 중심으로 펼쳐지는 환상적인 빛의 향연과 낮에는 10만여평 연지에 피어난 천만송이 연꽃과 함께 지역문화예술인의 수준 높은 공연과 각종 체험 및 이벤트 프로그램이 운영됩니다.",
           "likes": 5486,
           "date": "[2023-07-13],[2023-07-16]",
-          "location": "충청남도",
+          "location": "충남",
           "detail_location": "충청남도 부여군 부여읍 궁남로 52",
           "tel": "041-830-2207",
           "time": "14:00 ~ 22:00",
           "pay": "무료"
           },
           {
-          "id": 18,
+          "id": 1018,
           "name": "외암민속마을 문화재야행",
           "poster": "/image/chungnam/18_poster.jpg",
           "image1": "/image/chungnam/18_image_1.jpg",
@@ -313,7 +311,7 @@ const festivalsData = [
           "detail_description": "중부권 유일의 민속마을인 아산 외암마을에서 조선시대의 품격 있는 선비문화와 마을공동체 문화를 체험해 볼 수 있는 야간 문화향유 프로그램 <아산 문화재야행>으로 여러분을 초대합니다. 조선 선비의 숨결이 살아 숨 쉬는 민속 마을이자, 밤이 되면 아름다운 정취을 자아내는 외암마을에서 가족, 연인과 함께 돌담길을 걸으며 조선의 시간 속으로 여행을 떠나봅시다.",
           "likes": 12396,
           "date": "[2023-06-06],[2023-06-05]",
-          "location": "충청남도",
+          "location": "충남",
           "detail_location": "충청남도 아산시 외암민속길 5",
           "tel": "010-4889-3581",
           "time": "20:00 ~ 21:30",
@@ -321,7 +319,7 @@ const festivalsData = [
           },
           //강원도
           {
-            "id": 19,
+            "id": 1019,
             "name": "삼척 정원대보름 달맞이 축제",
             "poster": "/image/gangwon/19_poster.jpg", 
             "image1": "/image/gangwon/19_image_1.jpg",
@@ -338,7 +336,7 @@ const festivalsData = [
             "pay": "무료"
           },
         {
-            "id": 20,
+            "id": 1020,
             "name": "평창 더위사냥 축제",
             "poster": "/image/gangwon/20_poster.jpg", 
             "image1": "/image/gangwon/20_image_1.jpg",
@@ -355,7 +353,7 @@ const festivalsData = [
             "pay": "유료"
           },
         {
-            "id": 21,
+            "id": 1021,
             "name": "강릉 누들 축제",
             "poster": "/image/gangwon/21_poster.jpg", 
             "image1": "/image/gangwon/21_image_1.jpg",
@@ -372,7 +370,7 @@ const festivalsData = [
             "pay": "무료"
           },
         {
-            "id": 22,
+            "id": 1022,
             "name": "대관령 눈꽃 축제",
             "poster": "/image/gangwon/22_poster.jpg", 
             "image1": "/image/gangwon/22_image_1.jpg",
@@ -389,7 +387,7 @@ const festivalsData = [
             "pay": "유료"
           },
         {
-            "id": 23,
+            "id": 1023,
             "name": "횡성 한우 축제",
             "poster": "/image/gangwon/23_poster.jpg", 
             "image1": "/image/gangwon/23_image_1.jpg",
@@ -406,7 +404,7 @@ const festivalsData = [
             "pay": "유료"
           },
         {
-            "id": 24,
+            "id": 1024,
             "name": "강원 양양 해맞이 축제",
             "poster": "/image/gangwon/24_poster.jpg", 
             "image1": "/image/gangwon/24_image_1.jpg",
@@ -422,6 +420,7 @@ const festivalsData = [
             "time": "0:00 ~ 24:00",
             "pay": "무료"
           },
+
   // 제주도==============================================
   {
     id: 301,
