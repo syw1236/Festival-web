@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from "react";
 import RepFestivalList from "./RepFestivalList";
-import FestivalSimple from "./FistivalSimple";
+import PopularFestival from "./PopularFestival";
 import Calendar from "./Calendar";
-import "./CountryDetail.css";
+import "../css/CountryDetail.css";
+import data from "../data/FestivalsData";
+
 const Countrys = [
   {
     region: "서울",
@@ -75,86 +77,77 @@ const Countrys = [
 
   // "제주",
 ];
-function CountryDetail({ data }) {
-  const [activeIndex, setActiveIndex] = useState(0); //선택한 지역에 대한 인덱스 state
-  const [festivalArray, setFestivalArray] = useState(data); //축제 데이터에 대한 state
+function CountryDetail() {
+  const [activeIndex, setActiveIndex] = useState(0);
+  //선택한 지역에 대한 인덱스 useState
+  const [festivalArray, setFestivalArray] = useState(data);
+  //축제 데이터에 대한 useState
 
-  //const array = Array(3);
   const handleCountryClick = (index) => {
     setActiveIndex(index);
   };
-
-  const dividedArrays = [];
-  for (let i = 0; i < festivalArray.length; i += 3) {
-    dividedArrays.push(festivalArray.slice(i, i + 3));
-  }
 
   useEffect(() => {
     const filterlocationArray = data.filter(
       (item) => item.location === Countrys[activeIndex].region
     );
     setFestivalArray(filterlocationArray);
-  }, [activeIndex, data]);
+  }, [activeIndex]);
 
   return (
     <div className="centerContainer">
-      <div className="colorDiv">
-        <ul className="countryul">
-          {Countrys.map((country, i) => (
-            <li
-              className={`countryli ${activeIndex === i ? "active" : ""}`}
-              key={i}
-              onClick={() => handleCountryClick(i)}
-            >
-              {country.region}
-            </li>
-          ))}
-        </ul>
-
-        <div className="clickCountry">
-          <img
-            src={activeIndex == null ? "" : Countrys[activeIndex].image}
-            width={20}
-            height={20}
-            alt={activeIndex == null ? "" : Countrys[activeIndex].region}
-            className="countryImage"
-          />
-          <p className="clickCountryName">
-            {activeIndex !== null && Countrys[activeIndex].region}
-          </p>
-          <img
-            className="arrow"
-            src="/image/icon/arrow.png"
-            width={30}
-            height={30}
-            alt="arrow.png"
+      <div className="divideContainer">
+        <div className="countryContainer">
+          <ul className="countryul">
+            {/* 지역 이름 표시*/}
+            {Countrys.map((country, i) => (
+              <li
+                className={`countryli ${activeIndex === i ? "active" : ""}`}
+                key={i}
+                onClick={() => handleCountryClick(i)}
+              >
+                {country.region}
+              </li>
+            ))}
+          </ul>
+        </div>
+        {/* 클릭한 지역 표시*/}
+        <div className="clickCountryContainer">
+          <div className="clickCountry">
+            <img
+              src={activeIndex == null ? "" : Countrys[activeIndex].image}
+              width={20}
+              height={20}
+              alt={activeIndex == null ? "" : Countrys[activeIndex].region}
+              className="countryImage"
+            />
+            <p className="clickCountryName">
+              {activeIndex !== null && Countrys[activeIndex].region}
+            </p>
+            <img
+              className="arrow"
+              src="/image/icon/arrow.png"
+              width={30}
+              height={30}
+              alt="arrow.png"
+            />
+          </div>
+        </div>
+        <div className="repFestival">
+          {/* 클릭한 지역의 축제 D-day 표시*/}
+          <RepFestivalList
+            data={festivalArray}
+            country={Countrys[activeIndex].region}
           />
         </div>
-        <RepFestivalList
-          data={festivalArray}
-          country={Countrys[activeIndex].region}
-        />
       </div>
 
-      <div className="currentContain">
-        <p className="currentpopularity">
-          <span className="region">{Countrys[activeIndex].region} </span>
-          <span className="regionDes">현재 인기 축제</span>
-        </p>
-        {dividedArrays.map((row, rowIndex) => (
-          <div key={rowIndex} className="festivalSimpleContain">
-            {row.map((item, itemIndex) => (
-              //<span>{item.name}</span>
-              <FestivalSimple key={itemIndex} festival={item} />
-            ))}
-          </div>
-        ))}
+      {/* 클릭한 지역의 인기 축제 나열*/}
+      <div className="currentContainer">
+        <PopularFestival festivals={festivalArray} />
       </div>
+      {/* 달력 및 해당 날짜에 맞는 포스터 나타내는 부분 */}
       <div>
-        <p className="festivalschedule">
-          <span className="region">{Countrys[activeIndex].region} </span>
-          <span className="schedulDes">축제 일정</span>
-        </p>
         <Calendar festivals={festivalArray} />
       </div>
     </div>
@@ -162,4 +155,3 @@ function CountryDetail({ data }) {
 }
 
 export default CountryDetail;
-//끝나는 날이 얼마 남지 않은 날을 RepFestival에다가 보내는 것
