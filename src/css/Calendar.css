@@ -1,7 +1,7 @@
 .calendar {
   display: inline-block;
   position: relative;
-  top: 1.5vh;
+  top: 1rem;
   left: 22%;
   padding-left: 1%;
 
@@ -11,16 +11,15 @@
 }
 .Year-Month-dayContainer {
   position: relative;
-  top: 3vh;
+  top: 2rem;
   left: 40%;
   margin-bottom: 2%;
 }
 .period {
   display: inline;
   font-weight: bold;
-  font-size: 2rem;
+  font-size: 2.5rem;
   padding-left: 0.5%;
-  padding-right: 0.5%;
 }
 .nextBtn {
   border-width: 0;
@@ -38,6 +37,7 @@
   padding-top: 10px;
   padding-bottom: 10px;
   text-align: center;
+  font-size: 1.3rem;
 }
 
 .dayli.active {
@@ -45,7 +45,7 @@
 }
 .dayofweekli {
   position: relative;
-  font-size: 1.1rem;
+  font-size: 1.3rem;
 }
 .calendarul {
   border-radius: 30px;
@@ -72,17 +72,17 @@
 .festivalschedule {
   position: relative;
   left: 25.8%;
-  top: 4vh;
+  top: 4rem;
   background-color: rgb(206, 220, 255);
   display: inline-block;
   padding: 8px;
   border-radius: 20px;
 }
 .schedulDes {
-  font-weight: 600;
-  font-size: 1.2rem;
+  font-weight: 550;
+  font-size: 1.4rem;
 }
-.region {
+.scheduleregion {
   font-weight: 1000;
-  font-size: 1.5rem;
+  font-size: 1.7rem;
 }
