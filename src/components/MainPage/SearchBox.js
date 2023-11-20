@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import festivalsData from "../../data/festivalsData";
 import { FaSearch } from "react-icons/fa";
-import "../../css/SearchBox.css"; // Import the CSS file
+import "../../css/SearchBox.css";
 
 function SearchBox() {
   const [searchTerm, setSearchTerm] = useState("");
@@ -12,21 +12,17 @@ function SearchBox() {
   const searchContainerRef = useRef(null);
 
   useEffect(() => {
-    // Add a global click event listener
     const handleGlobalClick = (event) => {
       if (
         searchContainerRef.current &&
         !searchContainerRef.current.contains(event.target)
       ) {
-        // Clicked outside the search container, close autocomplete
         setShowAutocomplete(false);
       }
     };
 
-    // Attach the event listener
     document.addEventListener("click", handleGlobalClick);
 
-    // Clean up the event listener on component unmount
     return () => {
       document.removeEventListener("click", handleGlobalClick);
     };
@@ -62,22 +58,17 @@ function SearchBox() {
 
   const handleSearchClick = () => {
     if (selectedId !== null) {
-      // 페이지 이동
       window.location.href = `/festival_detail/${selectedId}`;
     } else {
-      // 검색 결과만 출력
       search(searchTerm);
     }
   };
 
   const handleMoreSearchClick = () => {
-    // 페이지 이동
-    window.location.href = "/SearchList"; // Update this path to match your actual path
+    window.location.href = "/SearchList";
   };
 
-  const search = (term) => {
-    // 검색 로직 구현 (기존 코드 참조)
-  };
+  const search = (term) => {};
 
   return (
     <div ref={searchContainerRef} className="search-container">
