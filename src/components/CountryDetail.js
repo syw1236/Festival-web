@@ -3,7 +3,8 @@ import RepFestivalList from "./RepFestivalList";
 import PopularFestival from "./PopularFestival";
 import Calendar from "./Calendar";
 import "../css/CountryDetail.css";
-import data from "../data/examData";
+import festivalsData from '../data/festivalsData';
+
 
 const Countrys = [
   {
@@ -80,7 +81,7 @@ const Countrys = [
 function CountryDetail() {
   const [activeIndex, setActiveIndex] = useState(0);
   //선택한 지역에 대한 인덱스 useState
-  const [festivalArray, setFestivalArray] = useState(data);
+  const [festivalArray, setFestivalArray] = useState(festivalsData);
   //축제 데이터에 대한 useState
 
   const handleCountryClick = (index) => {
@@ -88,7 +89,9 @@ function CountryDetail() {
   };
 
   useEffect(() => {
-    const filterlocationArray = data.filter((item) => item.location === Countrys[activeIndex].region);
+    const filterlocationArray = festivalsData.filter(
+      (item) => item.location === Countrys[activeIndex].region
+    );
     setFestivalArray(filterlocationArray);
   }, [activeIndex]);
 

@@ -53,8 +53,7 @@ const SearchList = () => {
       <div
         className={`cardContainer ${isHovered ? 'hovered' : ''}`}
         onMouseEnter={() => setIsHovered(true)}
-        onMouseLeave={() => setIsHovered(false)}
-      >
+        onMouseLeave={() => setIsHovered(false)}>
         <Link to={`/festival_detail/${id}`}>
           <img src={poster} alt={name} />
           {isHovered && (

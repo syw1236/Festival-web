@@ -105,10 +105,10 @@
   
   .overlay {
     position: absolute;
-    top: 0;
+    bottom: 0; /* Adjusted from top to bottom */
     left: 0;
     width: 90%;
-    height: 50%;
+    height: 50%; /* Adjusted height to cover only half */
     background: rgba(0, 0, 0, 0.8);
     display: flex;
     justify-content: center;
@@ -119,6 +119,7 @@
     opacity: 0;
     transition: opacity 0.3s ease-in-out;
   }
+  
 
   .overlay p {
     color: white;

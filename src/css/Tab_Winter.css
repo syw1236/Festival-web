@@ -1,50 +1,99 @@
 /* Tab_Winter.css */
 
 .winter-tab-menu {
-    color: black;
-    font-weight: bold;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    list-style: none;
-    margin-bottom: 7rem;
-    margin-top: 10px;
-    margin-left: 100px; /* Add margin on the left */
-    margin-right: 100px; /* Add margin on the right */
-  }
-  
-  .winter-submenu {
-    display: flex;
-    width: calc(100% / 3);
-    padding: 10px;
-    font-size: 15px;
-    transition: 0.5s;
-    border-radius: 0px 0px 0px 0px;
-    border: 2px solid white;
-    cursor: pointer;
-  }
-  
-  .focused {
-    background-color: aliceblue;
-    color: rgb(21, 20, 20);
-  }
-  
-  .winter-desc {
-    text-align: center;
-  }
-  
-  .winter-festival-card {
-    margin: 5px;
-    padding: 5px;
-    text-align: center;
-  }
-  
-  .winter-festival-card img {
-    width: 200px;
-    height: 200px;
-  }
-  
-  .winter-background {
-    background-color: aliceblue;
-  }
-  
+  color: black;
+  font-weight: bold;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  list-style: none;
+  margin-bottom: 7rem;
+  margin-top: 10px;
+  margin-left: 100px; 
+  margin-right: 100px; 
+}
+
+.winter-submenu {
+  display: flex;
+  width: calc(100% / 3);
+  padding: 10px;
+  font-size: 15px;
+  transition: 0.5s;
+  border-radius: 0px 0px 0px 0px;
+  border: 2px solid white;
+  cursor: pointer;
+}
+
+.winter-submenu:nth-child(1) {
+  background-color: lightpink;
+}
+
+.winter-submenu:nth-child(2) {
+  background-color: lightgreen;
+}
+
+.winter-submenu:nth-child(3) {
+  background-color: rgb(173, 92, 92);
+}
+.winter-submenu:nth-child(4) {
+  background-color: rgb(182, 216, 246);
+}
+
+/*마우스 커서 올라가면 색 진해짐*/
+.winter-submenu:nth-child(1):hover {
+  background-color: rgb(233, 67, 94); 
+}
+.winter-submenu:nth-child(2):hover {
+  background-color: green; 
+}
+.winter-submenu:nth-child(3):hover {
+  background-color: red; 
+}
+.winter-submenu:nth-child(4):hover {
+  background-color: whitesmoke; 
+}
+/*마우스 커서 올라가면 색 진해짐*/
+
+
+.winter-desc {
+  text-align: center;
+}
+
+.winter-festival-card {
+  margin: 5px;
+  padding: 5px;
+  text-align: center;
+  position: relative;
+}
+
+.winter-festival-card img {
+  width: 200px;
+  height: 200px;
+  position: relative;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  padding: 10px;
+  box-sizing: border-box;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.overlay p {
+  color: white;
+}
+
+.winter-festival-card:hover .overlay {
+  opacity: 1;
+}
