@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { FaHeart } from "react-icons/fa";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const ListItem = styled.div`
   box-sizing: border-box;
@@ -50,9 +51,10 @@ function FamousFestivalListItem({ data }) {
   };
 
   // 포스터 클릭시 축제상세 페이지로 이동
+  const navigate = useNavigate();
   const clikPoster = () => {
     console.log("축제상세페이지로 이동");
-    //navigate("/축제상세페이지", { state: { festivalData: data } });
+    navigate(`/festival_detail/${data.id}`);
   };
   return (
     <ListItem onClick={clikPoster}>

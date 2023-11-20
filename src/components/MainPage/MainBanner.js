@@ -1,12 +1,14 @@
 import styled from "styled-components";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from "swiper/modules";
+import { Link } from "react-router-dom";
 import "swiper/css";
 import "swiper/css/pagination";
+import "../../css/MainBanner.css";
 
 const Wrapper = styled.div`
   box-sizing: border-box;
-  height: 25rem;
+  height: 20rem;
 `;
 
 const SlideContentWrapper = styled.div`
@@ -60,7 +62,7 @@ const Title = styled.div`
   overflow: hidden;
 `;
 
-const ShowDetailButt = styled.div`
+const ShowDetailButt = styled(Link)`
   box-sizing: border-box;
   width: 16.5rem;
   color: grey;
@@ -93,12 +95,7 @@ function MainBaanerContent({ festivalData }) {
         <LocalLabel>{festivalData.location}</LocalLabel>
         <SubTitle>{festivalData.description}</SubTitle>
         <Title>{festivalData.name}</Title>
-        <ShowDetailButt>
-          {
-            // 축제 상세페이지로의 링크 추가
-            "자세히보기"
-          }
-        </ShowDetailButt>
+        <ShowDetailButt to={`/festival_detail/${festivalData.id}`}>{"자세히 보기"}</ShowDetailButt>
       </BannerTitleWrapper>
       <ImgWrapper>
         <BannerImg src={festivalData.image1} />
@@ -126,7 +123,7 @@ function MainBanner({ festivalDatas }) {
           clickable: true,
         }}
         modules={[Autoplay, Pagination]}
-        className="mySwiper"
+        className="first-slide"
       >
         {newData.map((el, ix) => (
           <SwiperSlide key={ix}>

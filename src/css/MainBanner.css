@@ -1,0 +1,27 @@
+.first-slide {
+  box-sizing: border-box;
+  padding: 0rem;
+  margin: 0rem;
+}
+.first-slide .swiper-pagination {
+  position: absolute;
+  left: 50%;
+  top: 109%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: aqua;
+}
+
+.first-slide .swiper-pagination-bullet {
+  width: 0.6rem;
+  height: 0.6rem;
+  background-color: rgb(170, 170, 170);
+  border: 0rem;
+  opacity: 1;
+}
+
+.first-slide .swiper-pagination-bullet-active {
+  background-color: rgb(25, 85, 247); /* 다른 색상으로 변경 */
+}
