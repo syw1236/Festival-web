@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 const Header = styled.div`
   box-sizing: border-box;
@@ -59,6 +60,10 @@ const DateLabelTd = styled.td`
   color: red;
 `;
 
+const FestivalLink = styled(Link)`
+  color: black;
+`;
+
 function TableRow({ festivalData, ix }) {
   return (
     <FestivalTr iscolored={ix % 2 === 0 ? 1 : 0} isfirst={ix === 0 ? 1 : 0}>
@@ -66,10 +71,7 @@ function TableRow({ festivalData, ix }) {
         <LocalLabel>{festivalData.location}</LocalLabel>
       </LocalLogoTd>
       <TitleLabelTd>
-        {
-          //축제상세페이지로의 링크 추가
-          festivalData.name
-        }
+        <FestivalLink to={`/festival_detail/${festivalData.id}`}>{festivalData.name}</FestivalLink>
       </TitleLabelTd>
       <DateLabelTd>
         {`${festivalData.date[0].replace("-", ".").trim()}. ~

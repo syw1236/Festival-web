@@ -5,6 +5,7 @@ import Calendar from "./Calendar";
 import "../css/CountryDetail.css";
 import festivalsData from '../data/festivalsData';
 
+
 const Countrys = [
   {
     region: "서울",
@@ -121,24 +122,13 @@ function CountryDetail() {
               alt={activeIndex == null ? "" : Countrys[activeIndex].region}
               className="countryImage"
             />
-            <div className="clickCountryName">
-              {activeIndex !== null && Countrys[activeIndex].region}
-            </div>
-            <img
-              className="arrow"
-              src="/image/icon/arrow.png"
-              width={30}
-              height={30}
-              alt="arrow.png"
-            />
+            <div className="clickCountryName">{activeIndex !== null && Countrys[activeIndex].region}</div>
+            <img className="arrow" src="/image/icon/arrow.png" width={30} height={30} alt="arrow.png" />
           </div>
         </div>
         <div className="repFestival">
           {/* 클릭한 지역의 축제 D-day 표시*/}
-          <RepFestivalList
-            data={festivalArray}
-            country={Countrys[activeIndex].region}
-          />
+          <RepFestivalList data={festivalArray} country={Countrys[activeIndex].region} />
         </div>
       </div>
 
