@@ -63,7 +63,7 @@ function SearchBox() {
   const handleSearchClick = () => {
     if (selectedId !== null) {
       // 페이지 이동
-      window.location.href = `/festival/${selectedId}`;
+      window.location.href = `/festival_detail/${selectedId}`;
     } else {
       // 검색 결과만 출력
       search(searchTerm);
@@ -87,7 +87,8 @@ function SearchBox() {
         onChange={handleInputChange}
         onFocus={() => setShowAutocomplete(true)}
         placeholder="어떤 축제로 떠나볼까요?"
-        className="search-input"/>
+        className="search-input"
+      />
       <FaSearch onClick={handleSearchClick} className="search-icon" />
       <button onClick={handleMoreSearchClick}>더 많은 축제 검색해보기</button>
       {showAutocomplete && autocompleteResults.length > 0 && (
@@ -95,10 +96,11 @@ function SearchBox() {
           {autocompleteResults.map((result) => (
             <li
               key={result.id}
-              onClick={() => handleAutocompleteClick(result.id, result.name)}>
-                <span className="search-icon">
-                  <FaSearch />
-                </span>
+              onClick={() => handleAutocompleteClick(result.id, result.name)}
+            >
+              <span className="search-icon">
+                <FaSearch />
+              </span>
               {result.name}
             </li>
           ))}
