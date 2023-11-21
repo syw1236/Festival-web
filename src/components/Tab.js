@@ -52,7 +52,7 @@ const Tab = ({ festivalsData }) => {
           ))}
         </ul>
         <div className="desc">
-          <p>{menuArr[currentTab].content}</p>
+        <p style={{ fontWeight: 'bold', fontSize: '25px' }}>{menuArr[currentTab].content}</p>
           <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center' }}>
             {filteredFestivals.map((item) => (
               <div className="festival-card" key={item.id}>

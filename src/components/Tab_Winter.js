@@ -20,7 +20,8 @@ const Tab_Winter = ({ festivalsData }) => {
   const filteredFestivals = festivalsData.filter((festival) => {
     const tab0Keywords = ['철쭉', '연꽃'];
     const tab1Keywords = ['머드'];
-    const tab2Keywords = ['단풍', '가을', '핑크뮬리', '억새', '갈대', '국화'];
+    //const tab2Keywords = ['단풍', '가을', '핑크뮬리', '억새', '갈대', '국화'];
+    const tab2Keywords = ['단풍', '가을', '핑크뮬리'];
     const tab3Keywords = ['눈꽃'];
 
     const keywords =
@@ -54,7 +55,7 @@ const Tab_Winter = ({ festivalsData }) => {
           ))}
         </ul>
         <div className="winter-desc">
-          <p>{menuArr[currentTab].content}</p>
+        <p style={{ fontWeight: 'bold', fontSize: '25px' }}>{menuArr[currentTab].content}</p>
           <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center' }}>
             {filteredFestivals.map((item) => (
               <div className="winter-festival-card" key={item.id}>
