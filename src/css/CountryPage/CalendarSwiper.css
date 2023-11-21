@@ -1,19 +1,16 @@
 .swiperContainer {
-  position: relative;
-  top: 3rem;
-  left: 2%;
+  padding: 2rem 0rem;
+  margin: 0rem;
 }
 
 .imgContainer {
   padding: 0;
-  margin-bottom: 80px;
   text-align: center;
 }
 
 .image {
-  position: relative;
-  width: 29rem;
-  height: 35rem;
+  width: 33rem;
+  height: 40rem;
 }
 .image:active {
   opacity: 1;

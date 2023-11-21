@@ -6,22 +6,21 @@
 .first-slide .swiper-pagination {
   position: absolute;
   left: 50%;
-  top: 109%;
+  top: 105%;
   transform: translateX(-50%);
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: aqua;
 }
 
 .first-slide .swiper-pagination-bullet {
-  width: 0.6rem;
-  height: 0.6rem;
+  width: 0.7rem;
+  height: 0.7rem;
   background-color: rgb(170, 170, 170);
   border: 0rem;
   opacity: 1;
 }
 
 .first-slide .swiper-pagination-bullet-active {
-  background-color: rgb(25, 85, 247); /* 다른 색상으로 변경 */
+  background-color: rgb(25, 85, 247);
 }

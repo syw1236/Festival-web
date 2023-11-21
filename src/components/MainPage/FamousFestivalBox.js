@@ -1,10 +1,14 @@
 import styled from "styled-components";
 import FamousFestivalListItem from "./FamousFestivalListItem";
 
+const Wrapper = styled.div`
+  width: 80rem;
+`;
+
 const Header = styled.div`
   box-sizing: border-box;
   margin-bottom: 0.6rem;
-  font-size: 1rem;
+  font-size: 1.8rem;
   font-weight: 900;
 `;
 
@@ -25,8 +29,9 @@ const ItemWrapper = styled.div`
 
 function FamousFestivalBox({ likedFestivals }) {
   return (
-    <>
+    <Wrapper>
       <Header>{"현재 인기높은 국내축제"}</Header>
+      {/*좋아요 수가 많은 6개의 축제를 카드형식으로 출력*/}
       <ListWrapper>
         {likedFestivals.map((el, ix) => {
           return (
@@ -36,7 +41,7 @@ function FamousFestivalBox({ likedFestivals }) {
           );
         })}
       </ListWrapper>
-    </>
+    </Wrapper>
   );
 }
 

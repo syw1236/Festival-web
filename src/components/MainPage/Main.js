@@ -1,45 +1,51 @@
 import styled from "styled-components";
+import { useState, useMemo, useEffect } from "react";
 import SearchBox from "./SearchBox";
 import TodayFestivalBox from "./TodayFestivalBox";
 import FamousFestivalBox from "./FamousFestivalBox";
 import MainBanner from "./MainBanner";
-import { useState, useMemo } from "react";
-import examData from "../../data/examData";
+import festivalData from "../../data/festivalsData";
+import NavigationBar from "../CommonComp/navigationBar";
 
 const Wrapper = styled.div`
   box-sizing: border-box;
-  width: 50rem;
   margin: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-image: linear-gradient(to bottom, #b8d0de 18rem, white 0%);
+  background-image: linear-gradient(to bottom, rgb(206, 220, 255) 26rem, white 0%);
 `;
 
 const MainBannerArea = styled.div`
   box-sizing: border-box;
   width: 100%;
-  height: 25rem;
-  padding: 1rem;
-  padding-top: 1.8rem;
+  height: 40rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 `;
 
 const SearchArea = styled.div`
   box-sizing: border-box;
   width: 100%;
-  height: 4rem;
   padding: 0.4rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: start;
+  margin-bottom: 2.5rem;
 `;
 
 const TodayFestivalArea = styled.div`
   box-sizing: border-box;
   width: 100%;
   padding: 1rem 1.8rem 2rem 1.8rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 `;
 
 const FamousFestivalArea = styled.div`
@@ -47,11 +53,20 @@ const FamousFestivalArea = styled.div`
   width: 100%;
   padding: 1rem 1.8rem;
   background-color: #f2f2f2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 `;
 
 function Main() {
   // 축제데이터
-  const [fullData, setFestivalData] = useState(examData);
+  const [fullData, setFestivalData] = useState(festivalData);
+
+  // 페이지 이동시 스크롤을 맨위로 이동시킨다.
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   // 현재 날짜기준 진행중인 축제데이터 배열을 구한다.
   const todayFestivals = useMemo(() => {
@@ -70,7 +85,7 @@ function Main() {
     });
   }, [fullData]);
 
-  // 랜덤데이터 선별
+  // 메인 배너로 보여줄 랜덤 축제데이터 선별
   const randomFestivals = useMemo(() => {
     const randomArr = [];
     var tmp = 0;
@@ -86,27 +101,35 @@ function Main() {
     return randomArr.map((el, ix) => fullData[el]);
   }, [fullData]);
 
-  // 좋아요 수가 가장 많은 6개의 축제데이터를 계산한다.
+  // 좋아요 수가 가장 많은 6개의 축제데이터를 구하는 함수
   const likedFestivals = useMemo(() => {
     const newData = [...fullData];
     return newData.sort((a, b) => b.likes - a.likes).slice(0, 6);
   }, [fullData]);
 
   return (
-    <Wrapper>
-      <MainBannerArea>
-        <MainBanner festivalDatas={randomFestivals} />
-      </MainBannerArea>
-      <SearchArea>
-        <SearchBox />
-      </SearchArea>
-      <TodayFestivalArea>
-        <TodayFestivalBox todayFestivals={todayFestivals} />
-      </TodayFestivalArea>
-      <FamousFestivalArea>
-        <FamousFestivalBox likedFestivals={likedFestivals} />
-      </FamousFestivalArea>
-    </Wrapper>
+    <>
+      {/*네비게이션바*/}
+      <NavigationBar backgroundColor={"rgb(206, 220, 255)"} hoverColor={"rgb(145, 176, 255)"} />
+      <Wrapper>
+        {/*메인 배너 부분*/}
+        <MainBannerArea>
+          <MainBanner festivalDatas={randomFestivals} />
+        </MainBannerArea>
+        {/*검색바 부분*/}
+        <SearchArea>
+          <SearchBox />
+        </SearchArea>
+        {/*오늘의 축제 테이블 부분*/}
+        <TodayFestivalArea>
+          <TodayFestivalBox todayFestivals={todayFestivals} />
+        </TodayFestivalArea>
+        {/*인기 축제 부분*/}
+        <FamousFestivalArea>
+          <FamousFestivalBox likedFestivals={likedFestivals} />
+        </FamousFestivalArea>
+      </Wrapper>
+    </>
   );
 }
 

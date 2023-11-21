@@ -1,10 +1,14 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
+const Wrapper = styled.div`
+  width: 80rem;
+`;
+
 const Header = styled.div`
   box-sizing: border-box;
   margin-bottom: 0.6rem;
-  font-size: 1rem;
+  font-size: 1.8rem;
   font-weight: 900;
 `;
 
@@ -13,7 +17,7 @@ const FestivalTable = styled.table`
 `;
 
 const FestivalTr = styled.tr`
-  height: 2.2rem;
+  height: 4rem;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -23,7 +27,7 @@ const FestivalTr = styled.tr`
 `;
 
 const LocalLogoTd = styled.td`
-  width: 6rem;
+  width: 9rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -32,32 +36,34 @@ const LocalLogoTd = styled.td`
 
 const LocalLabel = styled.div`
   box-sizing: border-box;
-  width: 4rem;
-  line-height: 1.5rem;
+  width: 7rem;
+  height: 2.8rem;
+  line-height: 2.8rem;
   text-align: center;
-  height: 1.6rem;
   border-radius: 2rem;
-  font-size: 0.9rem;
+  font-size: 1.5rem;
   color: white;
   background-color: #2b2424;
 `;
 
 const TitleLabelTd = styled.td`
-  width: calc(100% - 18rem);
+  width: calc(100% - 21rem);
   display: flex;
   flex-direction: column;
   justify-content: center;
   font-weight: 800;
   text-decoration: underline;
+  font-size: 1.5rem;
 `;
 
 const DateLabelTd = styled.td`
-  width: 12rem;
+  width: 21rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   color: red;
+  font-size: 1.5rem;
 `;
 
 const FestivalLink = styled(Link)`
@@ -66,25 +72,32 @@ const FestivalLink = styled(Link)`
 
 function TableRow({ festivalData, ix }) {
   return (
-    <FestivalTr iscolored={ix % 2 === 0 ? 1 : 0} isfirst={ix === 0 ? 1 : 0}>
-      <LocalLogoTd>
-        <LocalLabel>{festivalData.location}</LocalLabel>
-      </LocalLogoTd>
-      <TitleLabelTd>
-        <FestivalLink to={`/festival_detail/${festivalData.id}`}>{festivalData.name}</FestivalLink>
-      </TitleLabelTd>
-      <DateLabelTd>
-        {`${festivalData.date[0].replace("-", ".").trim()}. ~
+    <>
+      {/*오늘의 축제 테이블의 하나의 열을 구성하는 파트 */}
+      <FestivalTr iscolored={ix % 2 === 0 ? 1 : 0} isfirst={ix === 0 ? 1 : 0}>
+        {/*지역명*/}
+        <LocalLogoTd>
+          <LocalLabel>{festivalData.location}</LocalLabel>
+        </LocalLogoTd>
+        {/*축제명 링크*/}
+        <TitleLabelTd>
+          <FestivalLink to={`/festival_detail/${festivalData.id}`}>{festivalData.name}</FestivalLink>
+        </TitleLabelTd>
+        {/*축제 일정*/}
+        <DateLabelTd>
+          {`${festivalData.date[0].replace("-", ".").trim()}. ~
                      ${festivalData.date[1].replace("-", ".").trim()}`}
-      </DateLabelTd>
-    </FestivalTr>
+        </DateLabelTd>
+      </FestivalTr>
+    </>
   );
 }
 
 function TodayFestivalBox({ todayFestivals }) {
   return (
-    <>
+    <Wrapper>
       <Header>{"오늘의 축제 소식"}</Header>
+      {/*해당되는 축제 리스트르 출력하는 테이블 */}
       <FestivalTable>
         <tbody>
           {todayFestivals.map((el, ix) => (
@@ -92,7 +105,7 @@ function TodayFestivalBox({ todayFestivals }) {
           ))}
         </tbody>
       </FestivalTable>
-    </>
+    </Wrapper>
   );
 }
 

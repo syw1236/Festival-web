@@ -5,20 +5,21 @@ import { useNavigate } from "react-router-dom";
 
 const ListItem = styled.div`
   box-sizing: border-box;
+  width: 25rem;
 `;
 
 const Poster = styled.img`
   box-sizing: border-box;
   display: block;
-  width: 14.5rem;
-  height: 13rem;
+  width: 25rem;
+  height: 26rem;
   cursor: pointer;
 `;
 
 const LikePrint = styled.div`
   box-sizing: border-box;
-  width: 14.5rem;
-  height: 2rem;
+  width: 25rem;
+  height: 4rem;
   padding: 0.2rem;
   background-color: white;
   display: flex;
@@ -26,11 +27,18 @@ const LikePrint = styled.div`
   justify-content: start;
   align-items: center;
   cursor: pointer;
+  font-size: 1.8rem;
+`;
+
+const HeartShape = styled(FaHeart)`
+  box-sizing: border-box;
+  display: inline-block;
+  margin: 0rem 1rem;
+  font-size: 2.5rem;
 `;
 
 const LikeCount = styled.div`
   box-sizing: border-box;
-  padding-left: 1rem;
   font-weight: 700;
 `;
 
@@ -53,14 +61,16 @@ function FamousFestivalListItem({ data }) {
   // 포스터 클릭시 축제상세 페이지로 이동
   const navigate = useNavigate();
   const clikPoster = () => {
-    console.log("축제상세페이지로 이동");
     navigate(`/festival_detail/${data.id}`);
   };
+
   return (
-    <ListItem onClick={clikPoster}>
-      <Poster src={data.poster} />
+    <ListItem>
+      {/*포스터 부분*/}
+      <Poster src={data.poster} onClick={clikPoster} />
+      {/*좋아요 부분*/}
       <LikePrint onClick={handleLike}>
-        <FaHeart size={25} color={liked ? "red" : "grey"} />
+        <HeartShape color={liked ? "red" : "grey"} />
         <LikeCount>{likes}</LikeCount>
       </LikePrint>
     </ListItem>

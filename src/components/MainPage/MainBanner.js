@@ -4,17 +4,17 @@ import { Autoplay, Pagination } from "swiper/modules";
 import { Link } from "react-router-dom";
 import "swiper/css";
 import "swiper/css/pagination";
-import "../../css/MainBanner.css";
+import "../../css/MainPage/MainBanner.css";
 
 const Wrapper = styled.div`
   box-sizing: border-box;
-  height: 20rem;
+  width: 80rem;
+  height: 38rem;
 `;
 
 const SlideContentWrapper = styled.div`
   box-sizing: border-box;
-  width: 48rem;
-  height: 23.3rem;
+  height: 38rem;
   display: grid;
   grid-template-columns: 11fr 14fr;
 `;
@@ -22,65 +22,66 @@ const SlideContentWrapper = styled.div`
 const BannerTitleWrapper = styled.div`
   box-sizing: border-box;
   width: 100%;
-  padding: 1rem 1rem 0rem 3rem;
+  height: 35rem;
+  padding: 1rem 3rem 0rem 3rem;
   display: flex;
   flex-direction: column;
 `;
 
 const LocalLabel = styled.div`
   box-sizing: border-box;
-  width: 5rem;
-  height: 2.3rem;
-  line-height: 2.2rem;
+  width: 9rem;
+  height: 3.5rem;
+  line-height: 3.8rem;
   text-align: center;
   border-radius: 2rem;
-  font-size: 1rem;
+  font-size: 1.8rem;
   color: white;
   background-color: #2b2424;
 `;
 
 const SubTitle = styled.div`
   box-sizing: border-box;
-  width: 16.5rem;
-  max-height: 7rem;
-  font-size: 1.1rem;
+  max-height: 17rem;
+  font-size: 1.7rem;
   font-weight: 600;
   word-break: keep-all;
   overflow-wrap: break-word;
   overflow: hidden;
-  margin-top: 2rem;
+  margin-top: 2.5rem;
 `;
 
 const Title = styled.div`
   box-sizing: border-box;
-  width: 16.5rem;
-  max-height: 6rem;
-  font-size: 1.4rem;
+  max-height: 7rem;
+  font-size: 2.1rem;
   font-weight: 700;
   word-break: keep-all;
   overflow-wrap: break-word;
   overflow: hidden;
+  padding-top: 0.8rem;
 `;
 
 const ShowDetailButt = styled(Link)`
   box-sizing: border-box;
-  width: 16.5rem;
+  width: auto;
   color: grey;
-  font-size: 0.8rem;
+  font-size: 1.2rem;
   font-weight: 600;
   text-decoration: underline;
-  margin-top: 1.5rem;
+  margin-top: 2rem;
 `;
 
 const ImgWrapper = styled.div`
   box-sizing: border-box;
   width: 100%;
+  height: 35rem;
 `;
 
 const BannerImg = styled.img`
   box-sizing: border-box;
   width: 100%;
-  height: 21rem;
+  height: 100%;
   object-fit: cover;
   object-position: center;
   border-radius: 0.4rem;
@@ -91,12 +92,14 @@ const BannerImg = styled.img`
 function MainBaanerContent({ festivalData }) {
   return (
     <SlideContentWrapper>
+      {/*슬라이드 아이템 내부 글박스 */}
       <BannerTitleWrapper>
         <LocalLabel>{festivalData.location}</LocalLabel>
         <SubTitle>{festivalData.description}</SubTitle>
         <Title>{festivalData.name}</Title>
         <ShowDetailButt to={`/festival_detail/${festivalData.id}`}>{"자세히 보기"}</ShowDetailButt>
       </BannerTitleWrapper>
+      {/*슬라이드 아이템 내부 이미지 부분 */}
       <ImgWrapper>
         <BannerImg src={festivalData.image1} />
       </ImgWrapper>
@@ -105,13 +108,14 @@ function MainBaanerContent({ festivalData }) {
 }
 
 function MainBanner({ festivalDatas }) {
-  // 이미지가 없는 데이터는 제거
+  // 이미지가 없는 데이터는 메인배너에 보이지 않게 걸러낸다.
   const newData = festivalDatas.filter((el) => {
     if (el.image1.trim() === "" || el.image1.trim() === null) return false;
     else return true;
   });
   return (
     <Wrapper>
+      {/*배너의 슬라이드 파트 */}
       <Swiper
         spaceBetween={30}
         centeredSlides={true}
