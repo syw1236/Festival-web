@@ -1,4 +1,3 @@
-/* Tab.css */
 .tab-menu {
   color: black;
   font-weight: bold;
@@ -8,7 +7,7 @@
   list-style: none;
   margin-bottom: 7rem;
   margin-top: 10px;
-  margin-left: 100px; 
+  margin-left: 100px;
   margin-right: 100px;
 }
 
@@ -23,29 +22,19 @@
   cursor: pointer;
 }
 
-.submenu:nth-child(1) {
-  background-color: lightgray
-}
-
-.submenu:nth-child(2) {
-  background-color: lightgoldenrodyellow
-}
-
+.submenu:nth-child(1),
+.submenu:nth-child(2),
 .submenu:nth-child(3) {
-  background-color: rgb(249, 137, 39);
+  border: 2px solid rgb(182, 216, 246);
 }
 
-/*마우스 커서 올라가면 색 진해짐*/
-.submenu:nth-child(1):hover {
-  background-color: darkgray; 
+.submenu.active {
+  background-color: rgb(206, 220, 255); /* Background color for the active tab */
 }
-.submenu:nth-child(2):hover {
-  background-color: yellow;
+/* 마우스 커서 올라가면 색 진해짐 */
+.submenu:hover {
+  background-color: rgb(182, 216, 246);
 }
-.submenu:nth-child(3):hover {
-  background-color: orange; 
-}
-/*마우스 커서 올라가면 색 진해짐*/
 
 .desc {
   text-align: center;

@@ -23,24 +23,20 @@ const Tab_Winter = ({ festivalsData }) => {
     const tab2Keywords = ['단풍', '가을', '핑크뮬리', '억새', '갈대', '국화'];
     const tab3Keywords = ['눈꽃'];
 
-    if (currentTab === 0) {
-      return tab0Keywords.some((keyword) =>
-        festival.name.toLowerCase().includes(keyword)
-      );
-    } else if (currentTab === 1) {
-      return tab1Keywords.some((keyword) =>
-        festival.name.toLowerCase().includes(keyword)
-      );
-    } else if (currentTab === 2) {
-      return tab2Keywords.some((keyword) =>
-        festival.name.toLowerCase().includes(keyword)
-      );
-    } else if (currentTab === 3) {
-      return tab3Keywords.some((keyword) =>
-        festival.name.toLowerCase().includes(keyword)
-      );
-    }
-    return false;
+    const keywords =
+      currentTab === 0
+        ? tab0Keywords
+        : currentTab === 1
+        ? tab1Keywords
+        : currentTab === 2
+        ? tab2Keywords
+        : currentTab === 3
+        ? tab3Keywords
+        : [];
+
+    return keywords.some((keyword) =>
+      festival.name.toLowerCase().includes(keyword)
+    );
   });
 
   return (
@@ -50,7 +46,7 @@ const Tab_Winter = ({ festivalsData }) => {
           {menuArr.map((el, index) => (
             <li
               key={index}
-              className={index === currentTab ? 'winter-submenu wfocused' : 'winter-submenu'}
+              className={index === currentTab ? 'winter-submenu active' : 'winter-submenu'}
               onClick={() => selectMenuHandler(index)}
             >
               {el.name}

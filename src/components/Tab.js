@@ -7,8 +7,8 @@ const Tab = ({ festivalsData }) => {
   const [currentTab, clickTab] = useState(0);
 
   const menuArr = [
-    { name: '낮보다 밤이 좋은', content: '#야경 #빛' },
-    { name: '새해복 많이많이', content: '#해돋이 #새해' },
+    { name: '야경 축제', content: '#야경 #빛' },
+    { name: '새해 2024', content: '#해돋이 #새해' },
     { name: '먹거리 축제', content: '#음식 #먹거리' },
   ];
 
@@ -17,10 +17,10 @@ const Tab = ({ festivalsData }) => {
   };
 
   const filteredFestivals = festivalsData.filter((festival) => {
-    const tab0Keywords = ['빛','이월드','밤마실'];
+    const tab0Keywords = ['이월드', '밤마실'];
     const tab1Keywords = ['해맞이'];
-    const tab2Keywords = ['한우', '곶감', '쌀', '김장', '포도', '고추', '누들','음식','와인','김치','빵','감귤','고사리','보쌈','장','비빔밥','유자','꼬막','씨푸드','라면','사과','인삼'];
-  
+    const tab2Keywords = ['곶감', '쌀', '김장', '포도'];
+
     if (currentTab === 0) {
       return tab0Keywords.some((keyword) =>
         festival.name.toLowerCase().includes(keyword)
@@ -43,9 +43,10 @@ const Tab = ({ festivalsData }) => {
         <ul className="tab-menu">
           {menuArr.map((el, index) => (
             <li
-              key={index}
-              className={index === currentTab ? 'submenu focused' : 'submenu'}
-              onClick={() => selectMenuHandler(index)}>
+            key={index}
+            className={index === currentTab ? 'winter-submenu active' : 'winter-submenu'}
+            onClick={() => selectMenuHandler(index)}
+          >
               {el.name}
             </li>
           ))}
