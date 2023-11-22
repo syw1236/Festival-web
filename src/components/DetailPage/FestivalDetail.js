@@ -144,12 +144,13 @@ const FestivalDetail = () => {
             {/*상단 배너의 글박스*/}
             <div className="bannerTitleBox">
               {/*메인페이지 돌아가기 링크*/}
-              <Link to="/">
-                <span className="bold-text-main">
-                  <IoHome style={{ fontSize: "26px" }} />
-                  <span style={{ marginLeft: "8px" }}>축제 메인으로</span>
-                </span>
-              </Link>
+              <Link to="/" style={{ textDecoration: 'none' }}>
+  <span className="bold-text-main">
+    <IoHome style={{ fontSize: '26px' }} />
+    <span style={{ marginLeft: '8px' }}>축제 메인으로</span>
+  </span>
+</Link>
+
               {/*배너의 글박스 내용부분*/}
               <div className="sub_title">{festival.description}</div>
               <div className="bold-title">{festival.name}</div>

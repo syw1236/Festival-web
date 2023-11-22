@@ -5,6 +5,7 @@ import Main from "./components/MainPage/Main";
 import CountryDetail from "./components/CountryPage/CountryDetail";
 import FestivalDetail from "./components/DetailPage/FestivalDetail";
 import SearchList from "./components/SearchPage/SearchList";
+import TabPrint from "./components/Tab/TabPrint";
 function App() {
   return (
     <Router>
@@ -13,6 +14,7 @@ function App() {
         <Route path="/CountryDetail" element={<CountryDetail />} />
         <Route path="/festival_detail/:id" element={<FestivalDetail />} />
         <Route path="/searchList" element={<SearchList />} />
+        <Route path="/tabPrint" element={<TabPrint />} />
       </Routes>
     </Router>
   );
